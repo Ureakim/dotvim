@@ -83,7 +83,7 @@ end
 
 "
 " NerdTree
-"
+
 " toggle the file tree split"
 nnoremap <leader>n :NERDTreeToggle<CR>
 
