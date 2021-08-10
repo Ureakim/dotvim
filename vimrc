@@ -20,6 +20,8 @@ set autoread        " auto reload file after an external change
 
 set backspace=indent,eol,start   " more powerful backspacing
 
+set completeopt+=noinsert        " don't auto insert when the autocomplete popup opens
+
 set noswapfile      " disable the swap file feature
 set hidden          " hide an unsaved buffer when opening a new one
 
