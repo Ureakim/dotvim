@@ -5,17 +5,6 @@ filetype on         " activate filetype detection via $VIMRUNTIME/filetype.vim
 filetype plugin on  " activate filetype plugins (ftplugins)
 filetype indent on  " activate filetype indentation via $VIMRUNTIME/indent.vim
 
-syntax on           " activate syntax highlighting
-
-set number          " display line number
-set relativenumber  " display line number relative to the cursor
-set ruler           " display line and column in the statusbar
-set laststatus=2    " always display the status line
-set showcmd         " show the current command in the status line
-set cursorline      " hightlight the current line
-set ttyfast         " update screen quickly
-set visualbell      " screen flash instead of bell sound
-
 set autoread        " auto reload file after an external change
 
 set backspace=indent,eol,start   " more powerful backspacing
@@ -25,8 +14,22 @@ set completeopt+=noinsert        " don't auto insert when the autocomplete popup
 set noswapfile      " disable the swap file feature
 set hidden          " hide an unsaved buffer when opening a new one
 
+" ######################
+" Ui
+
+syntax on           " activate syntax highlighting
+
 set splitbelow      " make the new window appear below the current window
 set splitright      " make the new window appear on the right
+
+set number          " display line number
+set relativenumber  " display line number relative to the cursor
+set ruler           " display line and column in the statusbar
+set laststatus=2    " always display the status line
+set showcmd         " show the current command in the status line
+set cursorline      " hightlight the current line
+set ttyfast         " update screen quickly
+set visualbell      " screen flash instead of bell sound
 
 set termguicolors   " use 24-bit colors
 colorscheme nebulae " set the default colorscheme
