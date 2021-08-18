@@ -2,7 +2,7 @@
 " General
 
 filetype on         " activate filetype detection via $VIMRUNTIME/filetype.vim
-filetype plugin on  " activate filetype plugins (ftplugins)
+filetype plugin on  " deactivate filetype plugins (ftplugins)
 filetype indent on  " activate filetype indentation via $VIMRUNTIME/indent.vim
 
 set autoread        " auto reload file after an external change
@@ -63,6 +63,12 @@ let mapleader = ','             " use comma as leader key
 
 nnoremap <leader>k :bn<CR>
 nnoremap <leader>j :bp<CR>
+
+" ######################
+"
+
+" Rust
+let g:rust_recommended_style = 0   " do not respect the recommended style
 
 " ######################
 " Plugins configuration
