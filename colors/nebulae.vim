@@ -86,9 +86,9 @@ exe 'hi Todo guifg='s:fg2'  gui=inverse,bold'
 exe 'hi Type guifg='s:type
 exe 'hi Underlined   gui=underline'
 
-exe 'hi SpellCap guibg='s:type' guifg='s:black
-exe 'hi SpellBad guibg='s:warning2' guifg='s:black
-exe 'hi Error guibg='s:warning' guifg='s:black
+exe 'hi SpellCap guifg='s:type' guibg=NONE cterm=underline'
+exe 'hi SpellBad guifg='s:warning2' guibg=NONE cterm=underline'
+exe 'hi Error guifg='s:warning' guibg=NONE cterm=underline'
 
 " Neovim Terminal Mode
 let g:terminal_color_0 = s:bg
