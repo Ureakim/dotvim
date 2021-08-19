@@ -1,10 +1,8 @@
 " ######################
-" Custom Variables
+" Variable definition
 
-" contains the autocmd information
-" key: the file extension
-" value : the command
-let g:urk_autocmd_pre = {}
+let g:lsc_server_commands = {}          " Map filetypes to the command that starts the language server
+let g:urk_autocmd_pre = {}              " Map filetypes to a command
 
 " ######################
 " General
@@ -75,19 +73,22 @@ nnoremap <leader>j :bp<CR>
 " ######################
 " Language configuration
 
+""""""""""""""""
 """"" Rust
 let g:rust_recommended_style = 0                 " do not respect the recommended style
-let g:urk_autocmd_pre['*.rs'] = ":%! rustfmt"    " auto launch rustfmt when saving
+
+if executable('rustfmt')
+	let g:urk_autocmd_pre['*.rs'] = ":%! rustfmt"    " auto launch rustfmt when saving
+end
 
 " ######################
 " Plugins configuration
 
+""""""""""""""""
 """"" vim-lsc
 
-let g:lsc_enable_autocomplete = v:false               " disable autocomplete (manual completion only)
-let g:lsc_auto_map = v:true                           " Use the defaults key mapping
-
-let g:lsc_server_commands = {}                        " Map a filetype to the command that starts the language server
+let g:lsc_enable_autocomplete = v:false      " disable autocomplete (manual completion only)
+let g:lsc_auto_map = v:true                  " Use the defaults key mapping
 
 if executable('rust-analyzer')
 	let g:lsc_server_commands.rust = 'rust-analyzer'
@@ -98,28 +99,15 @@ if executable('typescript-language-server')
 	let g:lsc_server_commands.typescript = 'typescript-language-server --stdio'
 end
 
+""""""""""""""""
 """"" NerdTree
 
 " toggle the file tree split"
 nnoremap <leader>n :NERDTreeToggle<CR>
 
+""""""""""""""""
 """"" FZF
 
 " open the Fuzzy file search split"
 nnoremap <leader>f :FZF<CR>
 
-" ######################
-" Call custom functions
-
-" create all autocmd
-function UrkAutocmd()
-	augroup UrkAutocmdPre
-		 " Remove all auto-commands from the group
-		autocmd!
-
-		for [filetypes, cmd] in items(g:urk_autocmd_pre)
-			execute 'autocmd BufWritePre '.filetypes.' '.cmd
-		endfor
-	augroup END
-endfunction
-call UrkAutocmd()
