@@ -65,16 +65,23 @@ nnoremap <leader>k :bn<CR>
 nnoremap <leader>j :bp<CR>
 
 " ######################
-"
+" Language configuration
 
-" Rust
+""""" Rust
 let g:rust_recommended_style = 0   " do not respect the recommended style
+
+augroup AutoRust
+	" Remove all auto-commands from the group
+	autocmd!
+
+	" run rustfmt everytime a .rs file is saved
+	autocmd BufWritePre *.rs :%! rustfmt
+augroup END
 
 " ######################
 " Plugins configuration
 
-" 
-" vim-lsc
+""""" vim-lsc
 
 let g:lsc_enable_autocomplete = v:false               " disable autocomplete (manual completion only)
 let g:lsc_auto_map = v:true                           " Use the defaults key mapping
@@ -90,14 +97,12 @@ if executable('typescript-language-server')
 	let g:lsc_server_commands.typescript = 'typescript-language-server --stdio'
 end
 
-"
-" NerdTree
+""""" NerdTree
 
 " toggle the file tree split"
 nnoremap <leader>n :NERDTreeToggle<CR>
 
-"
-" FZF
+""""" FZF
 
 " open the Fuzzy file search split"
 nnoremap <leader>f :FZF<CR>
