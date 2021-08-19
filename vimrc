@@ -1,4 +1,12 @@
 " ######################
+" Custom Variables
+
+" contains the autocmd information
+" key: the file extension
+" value : the command
+let g:urk_autocmd_pre = {}
+
+" ######################
 " General
 
 filetype on         " activate filetype detection via $VIMRUNTIME/filetype.vim
@@ -68,15 +76,8 @@ nnoremap <leader>j :bp<CR>
 " Language configuration
 
 """"" Rust
-let g:rust_recommended_style = 0   " do not respect the recommended style
-
-augroup AutoRust
-	" Remove all auto-commands from the group
-	autocmd!
-
-	" run rustfmt everytime a .rs file is saved
-	autocmd BufWritePre *.rs :%! rustfmt
-augroup END
+let g:rust_recommended_style = 0                 " do not respect the recommended style
+let g:urk_autocmd_pre['*.rs'] = ":%! rustfmt"    " auto launch rustfmt when saving
 
 " ######################
 " Plugins configuration
@@ -107,3 +108,18 @@ nnoremap <leader>n :NERDTreeToggle<CR>
 " open the Fuzzy file search split"
 nnoremap <leader>f :FZF<CR>
 
+" ######################
+" Call custom functions
+
+" create all autocmd
+function UrkAutocmd()
+	augroup UrkAutocmdPre
+		 " Remove all auto-commands from the group
+		autocmd!
+
+		for [filetypes, cmd] in items(g:urk_autocmd_pre)
+			execute 'autocmd BufWritePre '.filetypes.' '.cmd
+		endfor
+	augroup END
+endfunction
+call UrkAutocmd()
