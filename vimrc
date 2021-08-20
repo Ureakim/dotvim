@@ -2,7 +2,7 @@
 " Variable definition
 
 let g:lsc_server_commands = {}          " Map filetypes to the command that starts the language server
-let g:urk_autocmd_pre = {}              " Map filetypes to a command
+let g:urk_aac_formatter = {}              " Map filetypes to a command
 
 " ######################
 " General
@@ -78,7 +78,7 @@ nnoremap <leader>j :bp<CR>
 let g:rust_recommended_style = 0                 " do not respect the recommended style
 
 if executable('rustfmt')
-	let g:urk_autocmd_pre['*.rs'] = ":%! rustfmt"    " auto launch rustfmt when saving
+	let g:urk_aac_formatter['*.rs'] = ":%! rustfmt"    " auto launch rustfmt when saving
 end
 
 " ######################

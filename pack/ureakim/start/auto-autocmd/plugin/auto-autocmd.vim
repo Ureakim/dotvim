@@ -1,20 +1,28 @@
 " contains the autocmd information
 " key: the file extension
 " value : the command
-
-if !exists("g:urk_autocmd_pre")
-    let g:urk_autocmd_pre = {}
+if !exists("g:urk_aac_formatter")
+	let g:urk_aac_formatter = {}
 endif
 
 " create all autocmd
-function UrkAutocmd()
+function UrkAutoCmd()
 	augroup UrkAutocmdPre
-		 " Remove all auto-commands from the group
+		" Remove all auto-commands from the group
 		autocmd!
 
-		for [filetypes, cmd] in items(g:urk_autocmd_pre)
-			execute 'autocmd BufWritePre '.filetypes.' '.cmd
+		for [filetypes, cmd] in items(g:urk_aac_formatter)
+			execute 'autocmd BufWritePre '.filetypes.' call LaunchFormatter("'.cmd.'")'
 		endfor
 	augroup END
 endfunction
-call UrkAutocmd()
+call UrkAutoCmd()
+
+" Save the actual window view before launching the command
+" then restore the window view
+" Naive fix to the cursor jumping to the beginning of file
+function LaunchFormatter(cmd)
+	let view = winsaveview()
+	exe a:cmd
+	call winrestview(view)
+endfunction
