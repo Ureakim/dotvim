@@ -48,6 +48,18 @@ set incsearch       " highlight search while typing
 set ignorecase      " search is NOT case sensitive
 set smartcase       " make search case sensitive if the pattern contains an uppercase
 
+" use ripgrep for the :grep command
+if executable('rg')
+	set grepprg=rg\ --vimgrep\ --no-heading\ --smart-case
+endif
+
+" automatically open the location/quickfix window
+augroup autoOpenQfixLocWindow
+	autocmd!
+	autocmd QuickFixCmdPost [^l]* cwindow
+	autocmd QuickFixCmdPost l*    lwindow
+augroup END
+
 " ######################
 " Encoding
 
@@ -78,6 +90,13 @@ nnoremap <leader>k :bn<CR>
 nnoremap <leader>j :bp<CR>
 
 nnoremap <leader>n :Vexplore<CR>
+
+" ######################
+" Commands
+
+" Grep : launch :grep and redraw (no more "Press ENTER to continue")
+command! -nargs=+ -complete=file Grep
+    \ execute 'silent grep! <args>' | redraw!
 
 " ######################
 " Language configuration
@@ -112,5 +131,5 @@ end
 """"" FZF
 
 " open the Fuzzy file search split"
-nnoremap <leader>f :FZF<CR>
+nnoremap <leader>o :FZF<CR>
 

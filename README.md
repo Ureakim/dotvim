@@ -4,6 +4,7 @@
 ### Mandatory
 - none
 ### Optional
+- ripgrep
 - rust
 	- rust-analyzer
 - typescript/javascript
