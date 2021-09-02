@@ -2,7 +2,7 @@
 " Variable definition
 
 let g:lsc_server_commands = {}          " Map filetypes to the command that starts the language server
-let g:urk_aac_formatter = {}              " Map filetypes to a command
+let g:urk_aac_formatter = {}            " Map filetypes to a command
 
 " ######################
 " General
@@ -103,10 +103,22 @@ command! -nargs=+ -complete=file Grep
 
 """"""""""""""""
 """"" Rust
-let g:rust_recommended_style = 0                 " do not respect the recommended style
+let g:rust_recommended_style = 0       " do not respect the recommended style
 
 if executable('rustfmt')
 	let g:urk_aac_formatter['*.rs'] = ":%! rustfmt"    " auto launch rustfmt when saving
+end
+
+if executable('rust-analyzer')
+	let g:lsc_server_commands.rust = 'rust-analyzer'
+endif
+
+""""""""""""""""
+""""" JavaScript/TypeScript
+
+if executable('typescript-language-server')
+	let g:lsc_server_commands.javascript = 'typescript-language-server --stdio'
+	let g:lsc_server_commands.typescript = 'typescript-language-server --stdio'
 end
 
 " ######################
@@ -117,15 +129,6 @@ end
 
 let g:lsc_enable_autocomplete = v:false      " disable autocomplete (manual completion only)
 let g:lsc_auto_map = v:true                  " Use the defaults key mapping
-
-if executable('rust-analyzer')
-	let g:lsc_server_commands.rust = 'rust-analyzer'
-endif
-
-if executable('typescript-language-server')
-	let g:lsc_server_commands.javascript = 'typescript-language-server --stdio'
-	let g:lsc_server_commands.typescript = 'typescript-language-server --stdio'
-end
 
 """"""""""""""""
 """"" FZF
