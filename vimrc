@@ -63,12 +63,21 @@ set shiftwidth=2    " how many <space> per indent command
 set noexpandtab     " don't replace <tab> by <spaces> (because tab > space for indentation)
 
 " ######################
+" Netrw
+
+let g:netrw_liststyle = 3      " tree view by default
+let g:netrw_browse_split = 4   " open file in the previous window
+let g:netrw_winsize = 25       " take 25% when open in a split
+
+" ######################
 " Key sequences
 
 let mapleader = ','             " use comma as leader key
 
 nnoremap <leader>k :bn<CR>
 nnoremap <leader>j :bp<CR>
+
+nnoremap <leader>n :Vexplore<CR>
 
 " ######################
 " Language configuration
@@ -98,12 +107,6 @@ if executable('typescript-language-server')
 	let g:lsc_server_commands.javascript = 'typescript-language-server --stdio'
 	let g:lsc_server_commands.typescript = 'typescript-language-server --stdio'
 end
-
-""""""""""""""""
-""""" NerdTree
-
-" toggle the file tree split"
-nnoremap <leader>n :NERDTreeToggle<CR>
 
 """"""""""""""""
 """"" FZF
