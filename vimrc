@@ -105,10 +105,12 @@ command! -nargs=+ -complete=file Grep
 """"" Rust
 let g:rust_recommended_style = 0       " do not respect the recommended style
 
+" use rust-analyzer as lsp server
 if executable('rust-analyzer')
 	let g:lsc_server_commands.rust = 'rust-analyzer'
 endif
 
+" use rustfmt as formatter
 if executable('rustfmt')
 	let g:urk_aac_formatter['rust'] = "rustfmt"    " set a formatter for rust files
 end
@@ -116,11 +118,13 @@ end
 """"""""""""""""
 """"" JavaScript/TypeScript
 
+" use typescript-language-server as lsp server
 if executable('typescript-language-server')
 	let g:lsc_server_commands.javascript = 'typescript-language-server --stdio'
 	let g:lsc_server_commands.typescript = 'typescript-language-server --stdio'
 end
 
+" use prettier as formatter
 if executable('prettier')
 	let g:urk_aac_formatter['typescript,javascript'] = "prettier\\ --stdin-filepath\\ %"    " set a formatter for ts & js files
 end
@@ -136,6 +140,10 @@ let g:lsc_auto_map = v:true                  " Use the defaults key mapping
 
 """"""""""""""""
 """"" FZF
+
+if executable('rg')
+	let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --follow --glob "!.git/*"'      " use ripgrep as default search command in FZF
+end
 
 " open the Fuzzy file search split"
 nnoremap <leader>o :FZF<CR>
