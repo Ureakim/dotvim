@@ -12,7 +12,7 @@ function UrkAutoCmd()
 		autocmd!
 
 		for [filetypes, cmd] in items(g:urk_aac_formatter)
-			execute 'autocmd BufWritePre '.filetypes.' call LaunchFormatter("'.cmd.'")'
+			execute 'autocmd FileType '.filetypes.' setlocal equalprg='.cmd
 		endfor
 	augroup END
 endfunction
