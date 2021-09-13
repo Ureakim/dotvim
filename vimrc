@@ -2,7 +2,7 @@
 " Variable definition
 
 let g:lsc_server_commands = {}          " Map filetypes to the command that starts the language server
-let g:urk_aac_formatter = {}            " Map filetypes to a command
+let g:urk_aac_formatters = {}            " Map filetypes to a command
 
 " ######################
 " General
@@ -91,6 +91,8 @@ nnoremap <leader>j :bp<CR>
 
 nnoremap <leader>n :Vexplore<CR>
 
+nnoremap <leader>g :call Urk_LaunchFormatter()<CR>
+
 " ######################
 " Commands
 
@@ -112,7 +114,7 @@ endif
 
 " use rustfmt as formatter
 if executable('rustfmt')
-	let g:urk_aac_formatter['rust'] = "rustfmt"    " set a formatter for rust files
+	let g:urk_aac_formatters['rust'] = ":Neoformat\\ rustfmt"    " set a formatter for rust files
 end
 
 """"""""""""""""
@@ -126,7 +128,7 @@ end
 
 " use prettier as formatter
 if executable('prettier')
-	let g:urk_aac_formatter['typescript,javascript'] = "prettier\\ --stdin-filepath\\ %"    " set a formatter for ts & js files
+	let g:urk_aac_formatters['typescript,javascript'] = ":Neoformat\\ prettier"    " set a formatter for ts & js files
 end
 
 " ######################
