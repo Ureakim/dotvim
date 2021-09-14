@@ -20,6 +20,8 @@ set completeopt+=noinsert        " don't auto insert when the autocomplete popup
 set noswapfile      " disable the swap file feature
 set hidden          " hide an unsaved buffer when opening a new one
 
+set nowrap          " no wrapping by default
+
 set timeout          " activate mappings timeout
 set ttimeout         " activate keycodes timeout
 set timeoutlen=2000  " mappings timeout im ms
