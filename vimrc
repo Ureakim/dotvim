@@ -17,7 +17,11 @@ set backspace=indent,eol,start   " more powerful backspacing
 
 set completeopt+=noinsert        " don't auto insert when the autocomplete popup opens
 
+set nobackup        " disable backup files
+set nowritebackup   " disable backup files during file writing
 set noswapfile      " disable the swap file feature
+set noundofile      " disable the creation of undo files
+
 set hidden          " hide an unsaved buffer when opening a new one
 
 set nowrap          " no wrapping by default
@@ -156,4 +160,5 @@ end
 
 " open the Fuzzy file search split"
 nnoremap <leader>o :FZF<CR>
+nnoremap <leader>b :Buffers<CR>
 
