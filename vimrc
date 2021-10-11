@@ -139,7 +139,7 @@ end
 
 " use prettier as formatter
 if executable('prettier')
-	let g:urk_aac_formatters['typescript,javascript'] = ":Neoformat\\ prettier"    " set a formatter for ts & js files
+	let g:urk_aac_formatters['typescript,javascript,json'] = ":Neoformat\\ prettier"    " set a formatter for ts & js files
 end
 
 " ######################
