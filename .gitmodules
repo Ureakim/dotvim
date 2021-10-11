@@ -19,3 +19,6 @@
 [submodule "pack/plugins/start/fzf-vim"]
 	path = pack/plugins/start/fzf-vim
 	url = https://github.com/junegunn/fzf.vim
+[submodule "pack/plugins/start/vimspector"]
+	path = pack/plugins/start/vimspector
+	url = https://github.com/puremourning/vimspector.git
