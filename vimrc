@@ -169,10 +169,11 @@ nnoremap <leader>b :Buffers<CR>
 nnoremap <leader>dd :call vimspector#Launch()<CR>
 nnoremap <leader>de :call vimspector#Reset()<CR>
 
-nmap <leader>dj <Plug>VimspectorRunToCursor
+nmap <leader>d<Space> <Plug>VimspectorRunToCursor
 nmap <leader>dl <Plug>VimspectorStepOver
-nmap <leader>dk <Plug>VimspectorStepInto
-nmap <leader>dh <Plug>VimspectorStepOut
+nmap <leader>dj <Plug>VimspectorStepInto
+nmap <leader>dk <Plug>VimspectorStepOut
 nmap <leader>db <Plug>VimspectorToggleBreakpoint
 nmap <leader>df :call vimspector#Continue()<CR>
+nmap <leader>da :VimspectorWatch 
 
