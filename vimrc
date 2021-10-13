@@ -149,7 +149,20 @@ end
 """"" vim-lsc
 
 let g:lsc_enable_autocomplete = v:false      " disable autocomplete (manual completion only)
-let g:lsc_auto_map = v:true                  " Use the defaults key mapping
+let g:lsc_auto_map = {
+			\ 'defaults': v:false,
+			\ 'GoToDefinition': '<C-]>',
+			\ 'FindReferences': '<leader>lr',
+			\ 'NextReference': '<C-n>',
+			\ 'PreviousReference': '<C-p>',
+			\ 'FindImplementations': '<leader>li',
+			\ 'Rename': '<leader>lc',
+			\ 'SignatureHelp': '<leader>lm',
+			\ 'ShowHover': v:true,
+			\ 'Completion': 'completefunc',
+\}
+
+inoremap <C-l> <C-x><C-u>
 
 """"""""""""""""
 """"" FZF
