@@ -145,18 +145,20 @@ end
 " ######################
 " Plugins configuration
 
-" load package manager
-packadd minpac
+function! PackInit() abort
+	" load package manager
+	packadd minpac
 
-call minpac#init()
-call minpac#add('k-takata/minpac', {'type': 'opt'})
-call minpac#add('junegunn/fzf')
-call minpac#add('junegunn/fzf.vim')
-call minpac#add('sbdchd/neoformat')
-call minpac#add('natebosch/vim-lsc')
-call minpac#add('christoomey/vim-tmux-navigator')
-call minpac#add('tpope/vim-vinegar')
-call minpac#add('puremourning/vimspector')
+	call minpac#init()
+	call minpac#add('k-takata/minpac', {'type': 'opt'})
+	call minpac#add('junegunn/fzf')
+	call minpac#add('junegunn/fzf.vim')
+	call minpac#add('sbdchd/neoformat')
+	call minpac#add('natebosch/vim-lsc')
+	call minpac#add('christoomey/vim-tmux-navigator')
+	call minpac#add('tpope/vim-vinegar')
+	call minpac#add('puremourning/vimspector')
+endfunction
 
 """"""""""""""""
 """"" vim-lsc

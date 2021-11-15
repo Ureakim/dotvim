@@ -11,7 +11,7 @@ update_minpac: $(MINPAC_PATH)
 
 .PHONY: update_package
 update_package: $(MINPAC_PATH)
-	vim -c "call minpac#update('', {'do': 'quitall'})"
+	vim -c "call PackInit() | call minpac#update('', {'do': 'quitall'})"
 
 .PHONY: update
 update: update_minpac update_package
