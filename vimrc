@@ -128,6 +128,22 @@ if executable('rustfmt')
 	let g:urk_aac_formatters['rust'] = ":Neoformat\\ rustfmt"    " set a formatter for rust files
 end
 
+
+""""""""""""""""
+""""" Go
+" use gopls as lsp server
+if executable('gopls')
+	let g:lsc_server_commands.go = {
+		\ 'command': 'gopls serve',
+		\ 'log_level': -1,
+		\ 'suppress_stderr': v:true,
+	\}
+endif
+
+if executable('gofmt')
+	let g:urk_aac_formatters['go'] = ":Neoformat\\ gofmt"    " set a formatter for go files
+end
+
 """"""""""""""""
 """"" JavaScript/TypeScript
 
