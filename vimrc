@@ -2,7 +2,6 @@
 " Variable definition
 
 let g:lsc_server_commands = {}          " Map filetypes to the command that starts the language server
-let g:urk_aac_formatters = {}            " Map filetypes to a command
 
 " ######################
 " General
@@ -102,7 +101,7 @@ nnoremap <leader>j :bp<CR>
 
 nnoremap <leader>n :Vexplore<CR>
 
-nnoremap <leader>g :call Urk_LaunchFormatter()<CR>
+nnoremap <leader>g :Neoformat<CR>
 
 " ######################
 " Commands
@@ -123,12 +122,6 @@ if executable('rust-analyzer')
 	let g:lsc_server_commands.rust = 'rust-analyzer'
 endif
 
-" use rustfmt as formatter
-if executable('rustfmt')
-	let g:urk_aac_formatters['rust'] = ":Neoformat\\ rustfmt"    " set a formatter for rust files
-end
-
-
 """"""""""""""""
 """"" Go
 " use gopls as lsp server
@@ -140,10 +133,6 @@ if executable('gopls')
 	\}
 endif
 
-if executable('gofmt')
-	let g:urk_aac_formatters['go'] = ":Neoformat\\ gofmt"    " set a formatter for go files
-end
-
 """"""""""""""""
 """"" JavaScript/TypeScript
 
@@ -151,11 +140,6 @@ end
 if executable('typescript-language-server')
 	let g:lsc_server_commands.javascript = 'typescript-language-server --stdio'
 	let g:lsc_server_commands.typescript = 'typescript-language-server --stdio'
-end
-
-" use prettier as formatter
-if executable('prettier')
-	let g:urk_aac_formatters['typescript,javascript,json'] = ":Neoformat\\ prettier"    " set a formatter for ts & js files
 end
 
 " ######################
