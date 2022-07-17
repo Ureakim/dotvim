@@ -1,0 +1,23 @@
+snippet go:test
+func Test$1(t *testing.T) {
+	$0
+}
+endsnippet
+
+snippet go:testable
+func Test$1(t *testing.T) {
+	cases := []struct {
+		$2
+	}{
+		{$3},
+	}
+
+	for _, tc := range cases {
+		actual := $4
+		if actual != tc.expected {
+			t.Fatalf("$5", $6)
+		}
+	}
+}
+endsnippet
+

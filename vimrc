@@ -158,7 +158,16 @@ function! PackInit() abort
 	call minpac#add('christoomey/vim-tmux-navigator')
 	call minpac#add('tpope/vim-vinegar')
 	call minpac#add('puremourning/vimspector')
+	call minpac#add('SirVer/ultisnips')
 endfunction
+
+""""""""""""""""
+""""" ultisnips
+
+let g:UltiSnipsSnippetDirectories=[$HOME."/.vim/snips"]
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 
 """"""""""""""""
 """"" vim-lsc
