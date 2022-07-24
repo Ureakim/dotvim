@@ -107,8 +107,7 @@ nnoremap <leader>g :Neoformat<CR>
 " Commands
 
 " Grep : launch :grep and redraw (no more "Press ENTER to continue")
-command! -nargs=+ -complete=file Grep
-    \ execute 'silent grep! <args>' | redraw!
+command! -nargs=+ -complete=file Grep execute 'silent grep! <args>' | redraw!
 
 " ######################
 " Language configuration
@@ -151,6 +150,7 @@ function! PackInit() abort
 
 	call minpac#init()
 	call minpac#add('k-takata/minpac', {'type': 'opt'})
+	call minpac#add('vim-airline/vim-airline')
 	call minpac#add('junegunn/fzf')
 	call minpac#add('junegunn/fzf.vim')
 	call minpac#add('sbdchd/neoformat')
@@ -160,6 +160,11 @@ function! PackInit() abort
 	call minpac#add('puremourning/vimspector')
 	call minpac#add('SirVer/ultisnips')
 endfunction
+
+""""""""""""""""
+""""" vim-airline
+
+let g:airline_theme="nebulae"
 
 """"""""""""""""
 """"" ultisnips
@@ -212,5 +217,5 @@ nmap <leader>dj <Plug>VimspectorStepInto
 nmap <leader>dk <Plug>VimspectorStepOut
 nmap <leader>db <Plug>VimspectorToggleBreakpoint
 nmap <leader>df :call vimspector#Continue()<CR>
-nmap <leader>da :VimspectorWatch 
+nmap <leader>da :VimspectorWatch
 
