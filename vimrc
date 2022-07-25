@@ -30,8 +30,11 @@ set ttimeout         " activate keycodes timeout
 set timeoutlen=2000  " mappings timeout im ms
 set ttimeoutlen=50   " keycodes timeout in ms
 
-" clear jumplist at start
+" Clear jumplist at start
 autocmd VimEnter * :clearjumps
+
+" Close preview window after completion
+autocmd CompleteDone * silent! pclose
 
 " ######################
 " Ui
