@@ -185,6 +185,7 @@ let g:lsc_auto_map = {
 			\ 'NextReference': '<C-n>',
 			\ 'PreviousReference': '<C-p>',
 			\ 'FindImplementations': '<leader>li',
+			\ 'FindCodeActions': '<leader>la',
 			\ 'Rename': '<leader>lc',
 			\ 'SignatureHelp': '<leader>lm',
 			\ 'ShowHover': v:true,
