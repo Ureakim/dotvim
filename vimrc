@@ -30,6 +30,9 @@ set ttimeout         " activate keycodes timeout
 set timeoutlen=2000  " mappings timeout im ms
 set ttimeoutlen=50   " keycodes timeout in ms
 
+" clear jumplist at start
+autocmd VimEnter * :clearjumps
+
 " ######################
 " Ui
 
