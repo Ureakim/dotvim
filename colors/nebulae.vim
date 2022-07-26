@@ -37,15 +37,15 @@ let s:warning2="#dba95a"
 exe 'hi Normal guifg='s:fg' guibg='s:bg
 exe 'hi NonText guifg='s:fg' guibg='s:bg
 exe 'hi Cursor guifg='s:bg' guibg='s:fg
-exe 'hi CursorLine  guibg='s:black' cterm=NONE'
-exe 'hi CursorLineNr guifg='s:str' guibg='s:black' cterm=NONE'
+exe 'hi CursorLine  guibg='s:bg2' cterm=NONE'
+exe 'hi CursorLineNr guifg='s:fg' guibg='s:bg2' cterm=NONE'
 exe 'hi CursorColumn  guibg='s:bg2
 exe 'hi ColorColumn  guibg='s:black
-exe 'hi LineNr guifg='s:fg' guibg='s:black
+exe 'hi LineNr guifg='s:fg4' guibg='s:bg
 exe 'hi SignColumn guifg='s:fg' guibg='s:black
 exe 'hi VertSplit guifg='s:fg' guibg='s:black
 exe 'hi MatchParen guifg='s:warning2'  gui=underline'
-exe 'hi StatusLine guifg='s:fg' guibg='s:black' gui=bold cterm=bold'
+exe 'hi StatusLine guifg='s:fg' guibg='s:bg2' gui=bold cterm=bold'
 exe 'hi Pmenu guifg='s:fg' guibg='s:bg2
 exe 'hi PmenuSel  guibg='s:bg3
 exe 'hi IncSearch guifg='s:bg' guibg='s:const' cterm=NONE'
