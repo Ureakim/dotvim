@@ -15,115 +15,122 @@ let g:colors_name = "Nebulae"
 
 " Define reusable colorvariables.
 let s:black="#121212"
+let s:purple="#9e85ac"
+let s:blue="#6a8599"
+let s:brown="#977e78"
+let s:beige="#a79a88"
+let s:orange="#dba95a"
+let s:red="#e57b73"
+
+let s:gray10="#b2b2b2"
+let s:gray20="#a4a4a4"
+let s:gray30="#969696"
+let s:gray40="#878787"
+let s:gray50="#5a5a5a"
+let s:gray60="#494949"
+let s:gray70="#373737"
+
 let s:bg="#262626"
 let s:fg="#b2b2b2"
-let s:fg2="#a4a4a4"
-let s:fg3="#969696"
-let s:fg4="#878787"
-let s:bg2="#373737"
-let s:bg3="#494949"
-let s:bg4="#5a5a5a"
-let s:keyword="#a79a88"
-let s:builtin="#a79a88"
-let s:const= "#9e85ac"
-let s:comment="#b6ae8d"
-let s:func="#6a8599"
-let s:str="#977e78"
-let s:type="#6a8599"
-let s:var="#9e85ac"
-let s:warning="#e57b73"
-let s:warning2="#dba95a"
 
 exe 'hi Normal guifg='s:fg' guibg='s:bg
 exe 'hi NonText guifg='s:fg' guibg='s:bg
 exe 'hi Cursor guifg='s:bg' guibg='s:fg
-exe 'hi CursorLine  guibg='s:bg2' cterm=NONE'
-exe 'hi CursorLineNr guifg='s:fg' guibg='s:bg2' cterm=NONE'
-exe 'hi CursorColumn  guibg='s:bg2
+exe 'hi CursorLine  guibg='s:gray70' cterm=NONE'
+exe 'hi CursorLineNr guifg='s:fg' guibg='s:gray70' cterm=NONE'
+exe 'hi CursorColumn  guibg='s:gray70
 exe 'hi ColorColumn  guibg='s:black
-exe 'hi LineNr guifg='s:fg4' guibg='s:bg
+exe 'hi LineNr guifg='s:gray50' guibg='s:bg
 exe 'hi SignColumn guifg='s:fg' guibg='s:black
 exe 'hi VertSplit guifg='s:fg' guibg='s:black
-exe 'hi MatchParen guifg='s:warning2'  gui=underline'
-exe 'hi StatusLine guifg='s:fg' guibg='s:bg2' gui=bold cterm=bold'
-exe 'hi Pmenu guifg='s:fg' guibg='s:bg2
-exe 'hi PmenuSel  guibg='s:bg3
-exe 'hi IncSearch guifg='s:bg' guibg='s:const' cterm=NONE'
-exe 'hi Search  guifg='s:black' guibg='s:keyword
-exe 'hi Directory guifg='s:const
-exe 'hi Folded guifg='s:fg4' guibg='s:bg
-exe 'hi WildMenu guifg='s:black' guibg='s:str' gui=bold cterm=bold'
+exe 'hi MatchParen guifg='s:orange'  gui=underline'
+exe 'hi StatusLine guifg='s:fg' guibg='s:gray70' gui=bold cterm=bold'
+exe 'hi Pmenu guifg='s:fg' guibg='s:gray70
+exe 'hi PmenuSel  guibg='s:gray60
+exe 'hi IncSearch guifg='s:bg' guibg='s:purple' cterm=NONE'
+exe 'hi Search  guifg='s:black' guibg='s:beige
+exe 'hi Directory guifg='s:purple
+exe 'hi Folded guifg='s:gray40' guibg='s:bg
+exe 'hi WildMenu guifg='s:black' guibg='s:brown' gui=bold cterm=bold'
 
-exe 'hi Boolean guifg='s:const
-exe 'hi Character guifg='s:const
-exe 'hi Comment guifg='s:comment
-exe 'hi Conditional guifg='s:keyword
-exe 'hi Constant guifg='s:const
-exe 'hi Todo guibg='s:bg
-exe 'hi Define guifg='s:keyword
+" Constants
+exe 'hi Comment guifg='s:gray40
+" Keywords
+exe 'hi Conditional guifg='s:beige
+exe 'hi Define guifg='s:beige
+exe 'hi Keyword guifg='s:beige'  gui=bold'
+exe 'hi Operator guifg='s:beige
+exe 'hi PreProc guifg='s:beige
+exe 'hi Statement guifg='s:beige
+exe 'hi Tag guifg='s:beige
+" Constants & Primitive
+exe 'hi Constant guifg='s:purple
+exe 'hi Number guifg='s:purple
+exe 'hi Float guifg='s:purple
+exe 'hi Boolean guifg='s:purple
+exe 'hi Character guifg='s:purple
+exe 'hi Label guifg='s:purple
+" Function & Type
+exe 'hi Function guifg='s:blue
+exe 'hi Type guifg='s:blue
+exe 'hi Identifier guifg='s:blue'  gui=italic'
+exe 'hi StorageClass guifg='s:blue'  gui=italic'
+" String
+exe 'hi String guifg='s:brown
+
+exe 'hi Special guifg='s:fg
+exe 'hi Title guifg='s:fg'  gui=bold'
+
 exe 'hi DiffAdd guifg=#fafafa guibg=#123d0f gui=bold'
-exe 'hi DiffDelete guibg='s:bg2
+exe 'hi DiffDelete guibg='s:gray70
 exe 'hi DiffChange  guibg=#151b3c guifg=#fafafa'
 exe 'hi DiffText guifg=#ffffff guibg=#ff0000 gui=bold'
-exe 'hi ErrorMsg guifg='s:warning' guibg='s:bg2' gui=bold'
-exe 'hi WarningMsg guifg='s:fg' guibg='s:warning2
-exe 'hi Float guifg='s:const
-exe 'hi Function guifg='s:func
-exe 'hi Identifier guifg='s:type'  gui=italic'
-exe 'hi Keyword guifg='s:keyword'  gui=bold'
-exe 'hi Label guifg='s:var
-exe 'hi Number guifg='s:const
-exe 'hi Operator guifg='s:keyword
-exe 'hi PreProc guifg='s:keyword
-exe 'hi Special guifg='s:fg
-exe 'hi SpecialKey guifg='s:fg2' guibg='s:bg2
-exe 'hi Statement guifg='s:keyword
-exe 'hi StorageClass guifg='s:type'  gui=italic'
-exe 'hi String guifg='s:str
-exe 'hi Tag guifg='s:keyword
-exe 'hi Title guifg='s:fg'  gui=bold'
-exe 'hi Todo guifg='s:fg2'  gui=inverse,bold'
-exe 'hi Type guifg='s:type
+
+exe 'hi Todo guibg='s:bg
+exe 'hi ErrorMsg guifg='s:red' guibg='s:gray70' gui=bold'
+exe 'hi WarningMsg guifg='s:fg' guibg='s:orange
+exe 'hi SpecialKey guifg='s:gray20' guibg='s:gray70
+exe 'hi Todo guifg='s:gray20'  gui=inverse,bold'
 exe 'hi Underlined   gui=underline'
 
-exe 'hi SpellCap guifg='s:type' guibg=NONE cterm=underline'
-exe 'hi SpellBad guifg='s:warning2' guibg=NONE cterm=underline'
-exe 'hi Error guifg='s:warning' guibg=NONE cterm=underline'
+exe 'hi SpellCap guifg='s:blue' guibg=NONE cterm=underline'
+exe 'hi SpellBad guifg='s:orange' guibg=NONE cterm=underline'
+exe 'hi Error guifg='s:red' guibg=NONE cterm=underline'
 
 " Neovim Terminal Mode
 let g:terminal_color_0 = s:bg
-let g:terminal_color_1 = s:warning
-let g:terminal_color_2 = s:keyword
-let g:terminal_color_3 = s:bg4
-let g:terminal_color_4 = s:func
-let g:terminal_color_5 = s:builtin
-let g:terminal_color_6 = s:fg3
-let g:terminal_color_7 = s:str
-let g:terminal_color_8 = s:bg2
-let g:terminal_color_9 = s:warning2
-let g:terminal_color_10 = s:fg2
-let g:terminal_color_11 = s:var
-let g:terminal_color_12 = s:type
-let g:terminal_color_13 = s:const
-let g:terminal_color_14 = s:fg4
-let g:terminal_color_15 = s:comment
+let g:terminal_color_1 = s:red
+let g:terminal_color_2 = s:beige
+let g:terminal_color_3 = s:gray50
+let g:terminal_color_4 = s:blue
+let g:terminal_color_5 = s:beige
+let g:terminal_color_6 = s:gray30
+let g:terminal_color_7 = s:brown
+let g:terminal_color_8 = s:gray70
+let g:terminal_color_9 = s:orange
+let g:terminal_color_10 = s:gray20
+let g:terminal_color_11 = s:purple
+let g:terminal_color_12 = s:blue
+let g:terminal_color_13 = s:purple
+let g:terminal_color_14 = s:gray40
+let g:terminal_color_15 = s:gray50
 
 " Ruby Highlighting
-exe 'hi rubyAttribute guifg='s:builtin
-exe 'hi rubyLocalVariableOrMethod guifg='s:var
-exe 'hi rubyGlobalVariable guifg='s:var' gui=italic'
-exe 'hi rubyInstanceVariable guifg='s:var
-exe 'hi rubyKeyword guifg='s:keyword
-exe 'hi rubyKeywordAsMethod guifg='s:keyword' gui=bold'
-exe 'hi rubyClassDeclaration guifg='s:keyword' gui=bold'
-exe 'hi rubyClass guifg='s:keyword' gui=bold'
-exe 'hi rubyNumber guifg='s:const
+exe 'hi rubyAttribute guifg='s:beige
+exe 'hi rubyLocalVariableOrMethod guifg='s:purple
+exe 'hi rubyGlobalVariable guifg='s:purple' gui=italic'
+exe 'hi rubyInstanceVariable guifg='s:purple
+exe 'hi rubyKeyword guifg='s:beige
+exe 'hi rubyKeywordAsMethod guifg='s:beige' gui=bold'
+exe 'hi rubyClassDeclaration guifg='s:beige' gui=bold'
+exe 'hi rubyClass guifg='s:beige' gui=bold'
+exe 'hi rubyNumber guifg='s:purple
 
 " Python Highlighting
-exe 'hi pythonBuiltinFunc guifg='s:builtin
+exe 'hi pythonBuiltinFunc guifg='s:beige
 
 " Go Highlighting
-exe 'hi goBuiltins guifg='s:builtin
+exe 'hi goBuiltins guifg='s:beige
 let g:go_highlight_array_whitespace_error = 1
 let g:go_highlight_build_constraints      = 1
 let g:go_highlight_chan_whitespace_error  = 1
@@ -142,17 +149,17 @@ let g:go_highlight_variable_assignments   = 1
 let g:go_highlight_variable_declarations  = 1
 
 " Javascript Highlighting
-exe 'hi jsBuiltins guifg='s:builtin
-exe 'hi jsFunction guifg='s:keyword' gui=bold'
-exe 'hi jsGlobalObjects guifg='s:type
-exe 'hi jsAssignmentExps guifg='s:var
+exe 'hi jsBuiltins guifg='s:beige
+exe 'hi jsFunction guifg='s:beige' gui=bold'
+exe 'hi jsGlobalObjects guifg='s:blue
+exe 'hi jsAssignmentExps guifg='s:purple
 
 " Html Highlighting
-exe 'hi htmlLink guifg='s:var' gui=underline'
-exe 'hi htmlStatement guifg='s:keyword
-exe 'hi htmlSpecialTagName guifg='s:keyword
+exe 'hi htmlLink guifg='s:purple' gui=underline'
+exe 'hi htmlStatement guifg='s:beige
+exe 'hi htmlSpecialTagName guifg='s:beige
 
 " Markdown Highlighting
-exe 'hi mkdCode guifg='s:builtin
+exe 'hi mkdCode guifg='s:beige
 
 
