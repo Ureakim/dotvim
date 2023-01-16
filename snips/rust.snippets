@@ -1,0 +1,17 @@
+snippet rust:test
+#[test]
+fn test_$1() {
+	$0
+}
+endsnippet
+
+snippet rust:tests
+#[cfg(test)]
+mod tests {
+	use super::*;
+
+	fn test_$1() {
+		$0
+	}
+}
+endsnippet

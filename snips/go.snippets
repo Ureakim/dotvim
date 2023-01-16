@@ -1,0 +1,23 @@
+snippet go:test
+func Test$1(t *testing.T) {
+	$0
+}
+endsnippet
+
+snippet go:testable
+func Test$1(t *testing.T) {
+	cases := []struct {
+		name string
+		$2
+	}{
+		{$3},
+	}
+
+	for _, tt := range cases {
+		t.Run(tt.name, func(t *testing.T) {
+			$4
+		})
+	}
+}
+endsnippet
+
