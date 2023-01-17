@@ -1,3 +1,6 @@
+-- require order is important
+-- ex: lazy.nvim plugin need to have the mapleader already defined
+require("ureakim.remaps")
 require("ureakim.plugins")
 
 vim.opt.filetype = "on"            -- activate filetype detection
