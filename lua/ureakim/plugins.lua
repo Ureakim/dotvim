@@ -18,4 +18,7 @@ require("lazy").setup({
 		dependencies = {"nvim-lua/plenary.nvim"}},
 
 	{"neovim/nvim-lspconfig"},
+
+	{"williamboman/mason.nvim"},
+	{"williamboman/mason-lspconfig.nvim"},
 })
