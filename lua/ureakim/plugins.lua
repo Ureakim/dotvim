@@ -14,8 +14,8 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 	{"nvim-treesitter/nvim-treesitter", init = TSUpdate},
 
-	{"nvim-lua/plenary.nvim"},
-	{"nvim-telescope/telescope.nvim", tag = "0.1.0"},
+	{"nvim-telescope/telescope.nvim", tag = "0.1.0",
+		dependencies = {"nvim-lua/plenary.nvim"}},
 
 	{"neovim/nvim-lspconfig"},
 })
