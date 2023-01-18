@@ -16,8 +16,7 @@ require("lazy").setup({
 
 	{"nvim-treesitter/nvim-treesitter", init = TSUpdate},
 
-	{"nvim-telescope/telescope.nvim", tag = "0.1.0",
-	dependencies = {"nvim-lua/plenary.nvim"}},
+	{"ibhagwan/fzf-lua", branch = "main"},
 
 	{"neovim/nvim-lspconfig"},
 
