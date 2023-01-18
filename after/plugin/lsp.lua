@@ -1,10 +1,8 @@
 -- LSP Mappings
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 local opts = { noremap=true, silent=true }
-vim.keymap.set('n', '<space>gg', vim.diagnostic.open_float, opts)
 vim.keymap.set('n', '[g', vim.diagnostic.goto_prev, opts)
 vim.keymap.set('n', ']g', vim.diagnostic.goto_next, opts)
-vim.keymap.set('n', '<space>gl', vim.diagnostic.setloclist, opts)
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
@@ -16,15 +14,11 @@ local on_attach = function(client, bufnr)
 	-- See `:help vim.lsp.*` for documentation on any of the below functions
 	local bufopts = { noremap=true, silent=true, buffer=bufnr }
 	vim.keymap.set('n', '<leader>ld', vim.lsp.buf.definition, bufopts)
-	vim.keymap.set('n', '<leader>lD', vim.lsp.buf.declaration, bufopts)
-	vim.keymap.set('n', '<leader>li', vim.lsp.buf.implementation, bufopts)
-	vim.keymap.set('n', '<leader>lr', vim.lsp.buf.references, bufopts)
 	vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
 	vim.keymap.set('n', '<leader>lk', vim.lsp.buf.signature_help, bufopts)
 	vim.keymap.set('n', '<leader>lD', vim.lsp.buf.type_definition, bufopts)
 	vim.keymap.set('n', '<leader>lf', function() vim.lsp.buf.format { async = true } end, bufopts)
 	vim.keymap.set('n', '<leader>lR', vim.lsp.buf.rename, bufopts)
-	vim.keymap.set('n', '<leader>la', vim.lsp.buf.code_action, bufopts)
 end
 
 local lsp_flags = {
