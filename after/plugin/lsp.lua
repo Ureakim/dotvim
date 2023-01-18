@@ -1,8 +1,12 @@
+-- LSP Config
+vim.diagnostic.config({virtual_text = false})   -- deactivate virtual text
+
 -- LSP Mappings
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 local opts = { noremap=true, silent=true }
 vim.keymap.set('n', '[g', vim.diagnostic.goto_prev, opts)
 vim.keymap.set('n', ']g', vim.diagnostic.goto_next, opts)
+vim.keymap.set('n', '<leader>gg', vim.diagnostic.open_float, opts)
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer

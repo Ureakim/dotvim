@@ -22,10 +22,10 @@ vim.api.nvim_set_keymap('n', '<leader>lD',
     "<cmd>lua require('fzf-lua').lsp_declarations()<CR>",
     { noremap = true, silent = true })
 
-vim.api.nvim_set_keymap('n', '<leader>gg',
+vim.api.nvim_set_keymap('n', '<leader>gl',
     "<cmd>lua require('fzf-lua').lsp_document_diagnostics()<CR>",
     { noremap = true, silent = true })
 
-vim.api.nvim_set_keymap('n', '<leader>gG',
+vim.api.nvim_set_keymap('n', '<leader>gL',
     "<cmd>lua require('fzf-lua').lsp_workspace_diagnostics()<CR>",
     { noremap = true, silent = true })
