@@ -1,4 +1,4 @@
-snippet tests
+snippet tests "test module"
 	#[cfg(test)]
 	mod tests {
 		use super::*;
@@ -9,7 +9,7 @@ snippet tests
 		}
 	}
 
-snippet test
+snippet test "unit test"
 	#[test]
 	fn test_$1() {
 		$0

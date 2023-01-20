@@ -1,4 +1,4 @@
-snippet testable
+snippet testable "test table"
 	func Test$1(t *testing.T) {
 		cases := []struct {
 			name string
@@ -14,7 +14,7 @@ snippet testable
 		}
 	}
 
-snippet test
+snippet test "unit test"
 	func Test$1(t *testing.T) {
 		$0
 	}
