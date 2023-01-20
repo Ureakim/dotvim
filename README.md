@@ -4,6 +4,5 @@
 ### Required
 - git
 - tree-sitter-cli
-- FZF
 ### Optional
 - ripgrep
