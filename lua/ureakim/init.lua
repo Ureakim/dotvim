@@ -72,6 +72,7 @@ vim.opt.expandtab = false  -- don't replace <tab> with <space> (because tab > sp
 ---- netrw
 --
 
+vim.g.netrw_banner = 0         -- disable the netrw banner
 vim.g.netrw_liststyle = 3      -- tree view by default
-vim.g.netrw_browse_split = 4   -- open file in the previous windows
+vim.g.netrw_browse_split = 0   -- open file in the same buffer
 vim.g.netrw_winsize = 25       -- take 25% when open a split
