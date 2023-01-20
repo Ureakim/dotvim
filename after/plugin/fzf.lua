@@ -1,8 +1,8 @@
-vim.api.nvim_set_keymap('n', '<leader>ff',
+vim.api.nvim_set_keymap('n', '<leader>sf',
 	"<cmd>lua require('fzf-lua').files()<CR>",
 	{ noremap = true, silent = true })
 
-vim.api.nvim_set_keymap('n', '<leader>fb',
+vim.api.nvim_set_keymap('n', '<leader>sb',
     "<cmd>lua require('fzf-lua').buffers()<CR>",
     { noremap = true, silent = true })
 
