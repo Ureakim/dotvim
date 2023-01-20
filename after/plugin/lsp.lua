@@ -23,6 +23,7 @@ local on_attach = function(client, bufnr)
 	vim.keymap.set('n', '<leader>lD', vim.lsp.buf.type_definition, bufopts)
 	vim.keymap.set('n', '<leader>lf', function() vim.lsp.buf.format { async = true } end, bufopts)
 	vim.keymap.set('n', '<leader>lR', vim.lsp.buf.rename, bufopts)
+	vim.keymap.set('n', '<leader>la', vim.lsp.buf.code_action, bufopts)
 end
 
 local lsp_flags = {

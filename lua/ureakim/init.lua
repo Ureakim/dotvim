@@ -17,10 +17,10 @@ vim.opt.hidden = true  -- hide unsaved buffer
 
 vim.wo.wrap = false    -- no wrapping by default
 
-vim.opt.timeout = true        -- activate mappings timeout
-vim.opt.ttimeout = true       -- activate keycodes timeout
-vim.opt.timeoutlen = 2000     -- mappings timeout in ms
-vim.opt.ttimeoutlen = 500     -- keycodes timeout in ms
+-- vim.opt.timeout = true        -- activate mappings timeout
+-- vim.opt.ttimeout = true       -- activate keycodes timeout
+-- vim.opt.timeoutlen = 2000     -- mappings timeout in ms
+-- vim.opt.ttimeoutlen = 500     -- keycodes timeout in ms
 
 vim.opt.foldmethod = "syntax"   -- use syntax language for folding
 vim.opt.foldlevelstart = 99     -- don't fold everything by default
