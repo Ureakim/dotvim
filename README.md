@@ -8,8 +8,8 @@
 - ripgrep
 
 ## Keybindings
-\<space> as =<leader>
-Keybindings are organized via "namespace": <leader> and a letter
+\<space> as \<leader>
+Keybindings are organized via "namespace": \<leader> and a letter
 
 ### Keybindings namespaces
 - \<leader>l: LSP functions (definition, code actions, renaming, ...)
