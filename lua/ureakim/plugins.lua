@@ -14,6 +14,7 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 	{"nvim-treesitter/nvim-treesitter", init = TSUpdate},
 	{"neovim/nvim-lspconfig"},
+	{"alexghergh/nvim-tmux-navigation"},
 
 	{"j-hui/fidget.nvim"},
 	{"nvim-lualine/lualine.nvim"},
