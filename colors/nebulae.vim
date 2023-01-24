@@ -21,6 +21,7 @@ let s:brown="#977e78"
 let s:beige="#a79a88"
 let s:orange="#dba95a"
 let s:red="#e57b73"
+let s:green="#50B970"
 
 let s:gray10="#b2b2b2"
 let s:gray20="#a4a4a4"
@@ -83,10 +84,10 @@ exe 'hi String guifg='s:brown
 exe 'hi Special guifg='s:fg
 exe 'hi Title guifg='s:fg'  gui=bold'
 
-exe 'hi DiffAdd guifg=#fafafa guibg=#123d0f gui=bold'
-exe 'hi DiffDelete guibg='s:gray70
-exe 'hi DiffChange  guibg=#151b3c guifg=#fafafa'
-exe 'hi DiffText guifg=#ffffff guibg=#ff0000 gui=bold'
+exe 'hi DiffAdd guifg='s:green
+exe 'hi DiffDelete guifg='s:red
+exe 'hi DiffChange guifg='s:beige
+" exe 'hi DiffText guifg=#ffffff guibg=#ff0000 gui=bold'
 
 exe 'hi Todo guibg='s:bg
 exe 'hi ErrorMsg guifg='s:red' guibg='s:gray70' gui=bold'
