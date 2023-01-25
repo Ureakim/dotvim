@@ -14,6 +14,10 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 	{"nvim-treesitter/nvim-treesitter", init = TSUpdate},
 	{"neovim/nvim-lspconfig"},
+	{"mfussenegger/nvim-dap"
+	, dependencies = {
+		"rcarriga/nvim-dap-ui",
+	}},
 	{"alexghergh/nvim-tmux-navigation"},
 
 	{"j-hui/fidget.nvim"},
@@ -23,6 +27,7 @@ require("lazy").setup({
 
 	{"williamboman/mason.nvim"},
 	{"williamboman/mason-lspconfig.nvim"},
-	{"nvim-telescope/telescope.nvim", tag = "0.1.1",
-	dependencies = { "nvim-lua/plenary.nvim" }},
+	{"nvim-telescope/telescope.nvim"
+	, tag = "0.1.1"
+	, dependencies = { "nvim-lua/plenary.nvim" }},
 })
