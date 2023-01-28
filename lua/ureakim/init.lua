@@ -31,6 +31,7 @@ vim.cmd.colorscheme("nebulae")     -- set the default colorscheme
 vim.opt.splitbelow = true    -- make the new window appear below the current window
 vim.opt.splitright = true    -- make the new window appear on the right
 
+vim.opt.signcolumn = "yes"       -- always display the sign gutter
 vim.opt.number = true            -- display line number
 vim.opt.relativenumber = true    -- display relative number
 vim.opt.ruler = true             -- display line and column in status bar
