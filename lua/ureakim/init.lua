@@ -70,6 +70,8 @@ vim.opt.softtabstop = 2    -- how many <space> deleted when backspacing
 vim.opt.shiftwidth = 2     -- how many <space> per indent command
 vim.opt.expandtab = false  -- don't replace <tab> with <space> (because tab > space for indent)
 
+vim.g.rust_recommended_style = 0   -- do not use the default formatting style
+
 --
 ---- netrw
 --
