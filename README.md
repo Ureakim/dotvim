@@ -7,6 +7,7 @@
 ### Optional
 - ripgrep
 - rust-analyzer (installed with rustup)
+- phpactor
 
 ## Keybindings
 \<space\> as \<leader\>
