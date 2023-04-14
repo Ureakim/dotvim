@@ -28,7 +28,5 @@ require("lazy").setup({
 
 	{"williamboman/mason.nvim"},
 	{"williamboman/mason-lspconfig.nvim"},
-	{"nvim-telescope/telescope.nvim"
-	, tag = "0.1.1"
-	, dependencies = { "nvim-lua/plenary.nvim" }},
+	{"ibhagwan/fzf-lua"}
 })
