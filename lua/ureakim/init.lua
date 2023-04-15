@@ -12,7 +12,7 @@ vim.opt.autoread = true    -- autoreload file after external changes
 
 vim.opt.backspace =  {"indent","eol","start"}   -- more powerful backspacing
 
-vim.opt.completeopt = "menu,menuone,noinsert,noselect,preview"    -- configure autocomplete popup
+vim.opt.completeopt = "menu,menuone,noinsert,preview"    -- configure autocomplete popup
 
 vim.opt.hidden = true  -- hide unsaved buffer
 
