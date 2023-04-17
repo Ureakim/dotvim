@@ -1,0 +1,11 @@
+set scrolloff=8
+set incsearch
+set nohl
+set number
+set relativenumber
+
+let mapleader = " "
+
+map <leader>ff <Action>(GotoFile)
+map <leader>fb <Action>(Switcher)
+
