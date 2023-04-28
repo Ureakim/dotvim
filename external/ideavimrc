@@ -4,8 +4,14 @@ set nohl
 set number
 set relativenumber
 
+" Actions list
+" https://gist.github.com/zchee/9c78f91cc5ad771c1f5d
 let mapleader = " "
 
-map <leader>ff <Action>(GotoFile)
-map <leader>fb <Action>(Switcher)
+nmap <leader>fe <Action>(ActivateProjectToolWindow)
+nmap <leader>ff <Action>(GotoFile)
+nmap <leader>fb <Action>(Switcher)
+
+imap <C-l> <Action>(CodeCompletion)
+nmap <leader>la <Action>(ShowIntentionActions)
 
