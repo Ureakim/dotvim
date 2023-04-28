@@ -29,5 +29,5 @@ require("lazy").setup({
 	{"williamboman/mason.nvim"},
 	{"williamboman/mason-lspconfig.nvim"},
 	{"ibhagwan/fzf-lua"},
-	{"github/copilot.vim"}
+	{"zbirenbaum/copilot.lua"}
 })
