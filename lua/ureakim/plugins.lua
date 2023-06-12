@@ -21,7 +21,7 @@ require("lazy").setup({
 	}},
 	{"alexghergh/nvim-tmux-navigation"},
 
-	{"j-hui/fidget.nvim"},
+	{"j-hui/fidget.nvim", tag= "legacy"},
 	{"nvim-lualine/lualine.nvim"},
 
 	{"dcampos/nvim-snippy"},
