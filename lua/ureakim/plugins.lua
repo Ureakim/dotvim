@@ -15,6 +15,7 @@ require("lazy").setup({
 	{"Ureakim/nebulae.nvim", lazy = false, priority = 1000},
 	{"nvim-treesitter/nvim-treesitter", init = TSUpdate},
 	{"neovim/nvim-lspconfig"},
+	{"windwp/nvim-autopairs", event = "InsertEnter", opts = {}},
 	{"mfussenegger/nvim-dap"
 	, dependencies = {
 		"rcarriga/nvim-dap-ui",
