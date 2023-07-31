@@ -5,7 +5,7 @@ vim.diagnostic.config({
 
 -- LSP Mappings
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
-local opts = { noremap=true, silent=true }
+local opts = { noremap = true, silent = true }
 vim.keymap.set('n', '[g', vim.diagnostic.goto_prev, opts)
 vim.keymap.set('n', ']g', vim.diagnostic.goto_next, opts)
 vim.keymap.set('n', '<leader>gg', vim.diagnostic.open_float, opts)
@@ -19,7 +19,7 @@ local on_attach = function(client, bufnr)
 
 	-- Mappings.
 	-- See `:help vim.lsp.*` for documentation on any of the below functions
-	local bufopts = { noremap=true, silent=true, buffer=bufnr }
+	local bufopts = { noremap = true, silent = true, buffer = bufnr }
 	vim.keymap.set('n', '<leader>ld', vim.lsp.buf.definition, bufopts)
 	vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
 	vim.keymap.set('n', '<leader>lk', vim.lsp.buf.signature_help, bufopts)
@@ -39,13 +39,18 @@ local lsp_flags = {
 --
 
 -- Rust
-require('lspconfig')['rust_analyzer'].setup{
+require('lspconfig')['rust_analyzer'].setup {
 	on_attach = on_attach,
 	flags = lsp_flags,
+	['rust-analyzer'] = {
+		diagnostics = {
+			enable = false,
+		}
+	}
 }
 
 -- LUA
-require('lspconfig')['lua_ls'].setup{
+require('lspconfig')['lua_ls'].setup {
 	on_attach = on_attach,
 	flags = lsp_flags,
 	settings = {
@@ -67,12 +72,18 @@ require('lspconfig')['lua_ls'].setup{
 	}
 }
 
--- PHP
-require('lspconfig')['phpactor'].setup{
+-- Clojure
+require('lspconfig')['clojure_lsp'].setup {
 	on_attach = on_attach,
-    init_options = {
-        ["language_server_phpstan.enabled"] = false,
-        ["language_server_psalm.enabled"] = false,
-        ["language_server_php_cs_fixer.enabled"] = true,
-    }
+	flags = lsp_flags,
+}
+
+-- PHP
+require('lspconfig')['phpactor'].setup {
+	on_attach = on_attach,
+	init_options = {
+		["language_server_phpstan.enabled"] = false,
+		["language_server_psalm.enabled"] = false,
+		["language_server_php_cs_fixer.enabled"] = true,
+	}
 }
