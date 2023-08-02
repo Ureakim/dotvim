@@ -16,4 +16,4 @@ nmap <leader>fb <Action>(Switcher)
 
 imap <C-l> <Action>(CodeCompletion)
 nmap <leader>la <Action>(ShowIntentionActions)
-nmap <leader>lf <Actions>(ReformatCode)
+nmap <leader>lf <Action>(ReformatCode)
