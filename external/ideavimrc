@@ -4,14 +4,15 @@ set nohl
 set number
 set relativenumber
 
+set NERDTree
+
 " Actions list
 " https://gist.github.com/zchee/9c78f91cc5ad771c1f5d
 let mapleader = " "
 
-nmap <leader>fe <Action>(ActivateProjectToolWindow)
+nmap <leader>fe :NERDTreeToggle<CR>
 nmap <leader>ff <Action>(GotoFile)
 nmap <leader>fb <Action>(Switcher)
 
 imap <C-l> <Action>(CodeCompletion)
 nmap <leader>la <Action>(ShowIntentionActions)
-
