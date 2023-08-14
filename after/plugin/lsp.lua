@@ -87,3 +87,19 @@ require('lspconfig')['phpactor'].setup {
 		["language_server_php_cs_fixer.enabled"] = true,
 	}
 }
+
+-- Python
+require('lspconfig')['pylsp'].setup {
+	settings = {
+		pylsp = {
+			plugins = {
+				pycodestyle = {
+					ignore = {'W391'},
+					maxLineLength = 100
+				}
+			}
+		}
+	},
+	on_attach = on_attach,
+	flags = lsp_flags,
+}
