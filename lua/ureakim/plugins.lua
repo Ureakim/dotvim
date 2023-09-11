@@ -12,22 +12,25 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-	{"Ureakim/nebulae.nvim", lazy = false, priority = 1000},
-	{"nvim-treesitter/nvim-treesitter", init = TSUpdate},
-	{"neovim/nvim-lspconfig"},
-	{"windwp/nvim-autopairs", event = "InsertEnter"},
-	{"mfussenegger/nvim-dap"
-	, dependencies = {
-		"rcarriga/nvim-dap-ui",
-	}},
-	{"alexghergh/nvim-tmux-navigation"},
+	{ "Ureakim/nebulae.nvim",            lazy = false,         priority = 1000 },
+	{ "nvim-treesitter/nvim-treesitter", init = TSUpdate },
+	{ "neovim/nvim-lspconfig" },
+	{ "windwp/nvim-autopairs",           event = "InsertEnter" },
+	{
+		"mfussenegger/nvim-dap"
+		,
+		dependencies = {
+			"rcarriga/nvim-dap-ui",
+		}
+	},
+	{ "alexghergh/nvim-tmux-navigation" },
 
-	{"j-hui/fidget.nvim", tag= "legacy"},
-	{"nvim-lualine/lualine.nvim"},
+	{ "j-hui/fidget.nvim",                tag = "legacy" },
+	{ "nvim-lualine/lualine.nvim" },
 
-	{"dcampos/nvim-snippy"},
+	{ "dcampos/nvim-snippy" },
 
-	{"williamboman/mason.nvim"},
-	{"williamboman/mason-lspconfig.nvim"},
-	{"ibhagwan/fzf-lua"},
+	{ "williamboman/mason.nvim" },
+	{ "williamboman/mason-lspconfig.nvim" },
+	{ "ibhagwan/fzf-lua" },
 })
