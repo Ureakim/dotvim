@@ -14,7 +14,6 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
     { "Ureakim/nebulae.nvim",             lazy = false,                              priority = 1000 },
     { "nvim-treesitter/nvim-treesitter",  init = TSUpdate },
-    { "zbirenbaum/copilot.lua",           event = "InsertEnter",                     cmd = "Copilot" },
     { "neovim/nvim-lspconfig" },
     { "windwp/nvim-autopairs",            event = "InsertEnter" },
     { "mfussenegger/nvim-dap",            dependencies = { "rcarriga/nvim-dap-ui", } },
