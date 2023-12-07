@@ -72,34 +72,3 @@ require('lspconfig')['lua_ls'].setup {
 	}
 }
 
--- Clojure
-require('lspconfig')['clojure_lsp'].setup {
-	on_attach = on_attach,
-	flags = lsp_flags,
-}
-
--- PHP
-require('lspconfig')['phpactor'].setup {
-	on_attach = on_attach,
-	init_options = {
-		["language_server_phpstan.enabled"] = false,
-		["language_server_psalm.enabled"] = false,
-		["language_server_php_cs_fixer.enabled"] = true,
-	}
-}
-
--- Python
-require('lspconfig')['pylsp'].setup {
-	settings = {
-		pylsp = {
-			plugins = {
-				pycodestyle = {
-					ignore = {'W391'},
-					maxLineLength = 100
-				}
-			}
-		}
-	},
-	on_attach = on_attach,
-	flags = lsp_flags,
-}
