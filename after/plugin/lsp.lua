@@ -72,6 +72,22 @@ require('lspconfig')['lua_ls'].setup {
     }
 }
 
+-- Python
+require('lspconfig')['pylsp'].setup {
+	settings = {
+		pylsp = {
+			plugins = {
+				pycodestyle = {
+					ignore = {'W391'},
+					maxLineLength = 100
+				}
+			}
+		}
+	},
+	on_attach = on_attach,
+	flags = lsp_flags,
+}
+
 -- C/C++
 require('lspconfig')['clangd'].setup {
     on_attach = on_attach,
