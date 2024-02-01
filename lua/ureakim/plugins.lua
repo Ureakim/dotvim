@@ -19,7 +19,6 @@ require("lazy").setup({
     { "mfussenegger/nvim-dap",            dependencies = { "rcarriga/nvim-dap-ui", } },
     { "alexghergh/nvim-tmux-navigation" },
 
-    { "j-hui/fidget.nvim",                tag = "legacy" },
     { "nvim-lualine/lualine.nvim" },
 
     { "dcampos/nvim-snippy" },
@@ -27,4 +26,6 @@ require("lazy").setup({
     { "williamboman/mason.nvim" },
     { "williamboman/mason-lspconfig.nvim" },
     { "ibhagwan/fzf-lua" },
+
+    { "folke/noice.nvim",                 event = "VeryLazy",                        dependencies = { "MunifTanjim/nui.nvim", "rcarriga/nvim-notify", } }
 })
