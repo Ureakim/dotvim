@@ -17,7 +17,6 @@ require("lazy").setup({
     { "neovim/nvim-lspconfig" },
     { "windwp/nvim-autopairs",            event = "InsertEnter" },
     { "mfussenegger/nvim-dap",            dependencies = { "rcarriga/nvim-dap-ui", } },
-    { "alexghergh/nvim-tmux-navigation" },
 
     { "nvim-lualine/lualine.nvim" },
 
