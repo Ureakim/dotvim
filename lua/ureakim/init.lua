@@ -21,6 +21,8 @@ vim.opt.hidden = true                                 -- hide unsaved buffer
 
 vim.wo.wrap = false                                   -- no wrapping by default
 
+vim.opt.clipboard:append({'unnamedplus'})             -- use system clipboard
+
 -- vim.opt.timeout = true        -- activate mappings timeout
 -- vim.opt.ttimeout = true       -- activate keycodes timeout
 -- vim.opt.timeoutlen = 2000     -- mappings timeout in ms
