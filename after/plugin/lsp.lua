@@ -26,7 +26,6 @@ local on_attach = function(client, bufnr)
     vim.keymap.set('n', '<leader>lD', vim.lsp.buf.type_definition, bufopts)
     vim.keymap.set('n', '<leader>lf', function() vim.lsp.buf.format { async = true } end, bufopts)
     vim.keymap.set('n', '<leader>lR', vim.lsp.buf.rename, bufopts)
-    vim.keymap.set('n', '<leader>la', vim.lsp.buf.code_action, bufopts)
 end
 
 local lsp_flags = {
@@ -74,18 +73,18 @@ require('lspconfig')['lua_ls'].setup {
 
 -- Python
 require('lspconfig')['pylsp'].setup {
-	settings = {
-		pylsp = {
-			plugins = {
-				pycodestyle = {
-					ignore = {'W391'},
-					maxLineLength = 100
-				}
-			}
-		}
-	},
-	on_attach = on_attach,
-	flags = lsp_flags,
+    settings = {
+        pylsp = {
+            plugins = {
+                pycodestyle = {
+                    ignore = { 'W391' },
+                    maxLineLength = 100
+                }
+            }
+        }
+    },
+    on_attach = on_attach,
+    flags = lsp_flags,
 }
 
 -- C/C++
@@ -109,4 +108,7 @@ require('lspconfig')['omnisharp'].setup {
 }
 
 -- Golang
-require('lspconfig')['gopls'].setup {}
+require('lspconfig')['gopls'].setup {
+    on_attach = on_attach,
+    flags = lsp_flags,
+}
