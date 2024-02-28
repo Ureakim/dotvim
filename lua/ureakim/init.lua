@@ -21,7 +21,7 @@ vim.opt.hidden = true                                 -- hide unsaved buffer
 
 vim.wo.wrap = false                                   -- no wrapping by default
 
-vim.opt.clipboard:append({'unnamedplus'})             -- use system clipboard
+vim.opt.clipboard:append({ 'unnamedplus' })           -- use system clipboard
 
 -- vim.opt.timeout = true        -- activate mappings timeout
 -- vim.opt.ttimeout = true       -- activate keycodes timeout
@@ -59,11 +59,15 @@ vim.opt.incsearch = true  -- highlight search while typing
 vim.opt.ignorecase = true -- search is NOT case sensitive
 vim.opt.smartcase = true  -- make search case sensitive if the pattern contains uppercase
 
+-- if ripgrep is available, use it for greping
+if vim.fn.executable('rg') then
+    vim.o.grepprg = [[rg --hidden --glob "!.git" --no-heading --smart-case --vimgrep --follow $*]]
+end
 --
 ---- encoding
 --
 
-vim.opt.encoding = "utf-8"                                       -- encoding display
+vim.opt.encoding = "utf-8"                                         -- encoding display
 vim.opt.fileencodings = { "utf-8", "cp1252", "default", "latin9" } -- file encodings
 
 --
