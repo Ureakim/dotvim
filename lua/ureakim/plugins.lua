@@ -26,5 +26,13 @@ require("lazy").setup({
     { "williamboman/mason-lspconfig.nvim" },
     { "ibhagwan/fzf-lua" },
 
-    { "folke/noice.nvim",                 event = "VeryLazy",                        dependencies = { "MunifTanjim/nui.nvim", "rcarriga/nvim-notify", } }
+    { "folke/noice.nvim",                 event = "VeryLazy",                        dependencies = { "MunifTanjim/nui.nvim", "rcarriga/nvim-notify", } },
+    {
+        "folke/which-key.nvim",
+        event = "VeryLazy",
+        init = function()
+            vim.o.timeout = true
+            vim.o.timeoutlen = 300
+        end
+    }
 })

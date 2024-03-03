@@ -5,11 +5,11 @@ local dapui = require("dapui")
 -- Keymaps
 --
 
-vim.keymap.set('n', '<leader>dd', dap.continue)
-vim.keymap.set('n', '<leader>dc', dap.terminate)
-vim.keymap.set('n', '<leader>db', dap.toggle_breakpoint)
-vim.keymap.set('n', '<leader>di', dap.step_into)
-vim.keymap.set('n', '<leader>do', dap.step_over)
+vim.keymap.set('n', '<leader>dd', dap.continue, { desc = "Launch or continue" })
+vim.keymap.set('n', '<leader>dc', dap.terminate, { desc = "Terminate" })
+vim.keymap.set('n', '<leader>db', dap.toggle_breakpoint, { desc = "Toggle breakpoint" })
+vim.keymap.set('n', '<leader>di', dap.step_into, { desc = "Step in" })
+vim.keymap.set('n', '<leader>do', dap.step_over, { desc = "Step out" })
 
 --
 -- DAP Config
