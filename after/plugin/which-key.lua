@@ -4,4 +4,5 @@ wk.register({
     f = {name = "Find"},
     g = {name = "Diagnostics"},
     l = {name = "LSP"},
+    l = {name = "Project"},
 }, {})
