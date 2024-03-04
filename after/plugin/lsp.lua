@@ -8,7 +8,8 @@ vim.diagnostic.config({
 vim.keymap.set('n', '[g', vim.diagnostic.goto_prev, { noremap = true, silent = true, desc = "Prev error" })
 vim.keymap.set('n', ']g', vim.diagnostic.goto_next, { noremap = true, silent = true, desc = "Next error" })
 vim.keymap.set('n', '<leader>gg', vim.diagnostic.open_float, { noremap = true, silent = true, desc = "View diagnostics" })
-vim.keymap.set('n', '<leader>gl', vim.diagnostic.setloclist, { noremap = true, silent = true, desc = "View diagnostics in loclist" })
+vim.keymap.set('n', '<leader>gl', vim.diagnostic.setloclist,
+    { noremap = true, silent = true, desc = "View diagnostics in loclist" })
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
@@ -18,13 +19,17 @@ local on_attach = function(client, bufnr)
 
     -- Mappings.
     -- See `:help vim.lsp.*` for documentation on any of the below functions
-    vim.keymap.set('n', '<leader>ld', vim.lsp.buf.definition, { noremap = true, silent = true, buffer = bufnr, desc = "Definition" })
+    vim.keymap.set('n', '<leader>ld', vim.lsp.buf.definition,
+        { noremap = true, silent = true, buffer = bufnr, desc = "Definition" })
     vim.keymap.set('n', 'K', vim.lsp.buf.hover, { noremap = true, silent = true, buffer = bufnr, desc = "Hover infos" })
-    vim.keymap.set('n', '<leader>lk', vim.lsp.buf.signature_help, { noremap = true, silent = true, buffer = bufnr, desc = "Signature" })
-    vim.keymap.set('n', '<leader>lD', vim.lsp.buf.type_definition, { noremap = true, silent = true, buffer = bufnr, desc = "Type definition" })
+    vim.keymap.set('n', '<leader>lk', vim.lsp.buf.signature_help,
+        { noremap = true, silent = true, buffer = bufnr, desc = "Signature" })
+    vim.keymap.set('n', '<leader>lD', vim.lsp.buf.type_definition,
+        { noremap = true, silent = true, buffer = bufnr, desc = "Type definition" })
     vim.keymap.set('n', '<leader>lf', function() vim.lsp.buf.format { async = true } end,
-        { table.unpack(bufopts), desc = "Format buffer" })
-    vim.keymap.set('n', '<leader>lR', vim.lsp.buf.rename, { noremap = true, silent = true, buffer = bufnr, desc = "Rename symbol" })
+        { noremap = true, silent = true, buffer = bufnr, desc = "Format buffer" })
+    vim.keymap.set('n', '<leader>lR', vim.lsp.buf.rename,
+        { noremap = true, silent = true, buffer = bufnr, desc = "Rename symbol" })
 end
 
 local lsp_flags = {
