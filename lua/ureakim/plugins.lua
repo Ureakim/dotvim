@@ -12,11 +12,12 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-    { "Ureakim/nebulae.nvim",             lazy = false,                              priority = 1000 },
+    { "Ureakim/nebulae.nvim",             lazy = false,                                                       priority = 1000 },
     { "nvim-treesitter/nvim-treesitter",  init = TSUpdate },
     { "neovim/nvim-lspconfig" },
     { "windwp/nvim-autopairs",            event = "InsertEnter" },
-    { "mfussenegger/nvim-dap",            dependencies = { "rcarriga/nvim-dap-ui", } },
+    { "mfussenegger/nvim-dap" },
+    { "rcarriga/nvim-dap-ui",             dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" } },
 
     { "nvim-lualine/lualine.nvim" },
 
@@ -26,7 +27,7 @@ require("lazy").setup({
     { "williamboman/mason-lspconfig.nvim" },
     { "ibhagwan/fzf-lua" },
 
-    { "folke/noice.nvim",                 event = "VeryLazy",                        dependencies = { "MunifTanjim/nui.nvim", "rcarriga/nvim-notify", } },
+    { "folke/noice.nvim",                 event = "VeryLazy",                                                 dependencies = { "MunifTanjim/nui.nvim", "rcarriga/nvim-notify", } },
     {
         "folke/which-key.nvim",
         event = "VeryLazy",
