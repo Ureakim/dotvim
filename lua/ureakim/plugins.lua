@@ -17,6 +17,7 @@ require("lazy").setup({
     { "neovim/nvim-lspconfig" },
     { "windwp/nvim-autopairs",            event = "InsertEnter" },
     { "mfussenegger/nvim-dap" },
+    { "stevearc/oil.nvim",                dependencies = { "nvim-tree/nvim-web-devicons" } },
     { "rcarriga/nvim-dap-ui",             dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" } },
 
     { "nvim-lualine/lualine.nvim" },

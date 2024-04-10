@@ -3,7 +3,7 @@ vim.g.maplocalleader = " " -- space as local leader key
 
 vim.keymap.set('i', '<C-l>', '<C-x><C-o>', { noremap = true, desc = "autocomplete" })
 
-vim.keymap.set('n', '<leader>fe', vim.cmd.Ex, { desc = "Open Netrw" })
+-- vim.keymap.set('n', '<leader>fe', vim.cmd.Ex, { desc = "Open Netrw" })
 vim.keymap.set('n', 'Q', "<nop>", { desc = "Leave me alone Ex mode" })
 
 vim.keymap.set('t', '<Esc>', [[<C-\><C-n>]], { noremap = true, desc = "Disable insert mode in term with Escape" })
