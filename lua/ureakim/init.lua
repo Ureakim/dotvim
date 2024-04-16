@@ -37,18 +37,21 @@ vim.cmd.colorscheme("nebulae") -- set the default colorscheme
 vim.opt.splitbelow = true      -- make the new window appear below the current window
 vim.opt.splitright = true      -- make the new window appear on the right
 
-vim.opt.signcolumn = "yes"     -- always display the sign gutter
-vim.opt.number = true          -- display line number
-vim.opt.relativenumber = true  -- display relative number
-vim.opt.ruler = true           -- display line and column in status bar
-vim.opt.laststatus = 2         -- always display the status line
-vim.opt.colorcolumn = "99"     -- add a ruler at column 99
-vim.opt.showcmd = true         -- show the current command in the status line
-vim.opt.cursorline = true      -- highlight the cursor line
-vim.opt.scrolloff = 8          -- scroll offset
-vim.opt.ttyfast = true         -- update terminal quickly
-vim.opt.visualbell = true      -- screen flash instead of bell sound
-vim.opt.termguicolors = true   -- use 24-bits colors
+vim.opt.list = true                                             -- display whitespace characters
+vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }     -- whitespaces list
+
+vim.opt.signcolumn = "yes"    -- always display the sign gutter
+vim.opt.number = true         -- display line number
+vim.opt.relativenumber = true -- display relative number
+vim.opt.ruler = true          -- display line and column in status bar
+vim.opt.laststatus = 2        -- always display the status line
+vim.opt.colorcolumn = "99"    -- add a ruler at column 99
+vim.opt.showcmd = true        -- show the current command in the status line
+vim.opt.cursorline = true     -- highlight the cursor line
+vim.opt.scrolloff = 8         -- scroll offset
+vim.opt.ttyfast = true        -- update terminal quickly
+vim.opt.visualbell = true     -- screen flash instead of bell sound
+vim.opt.termguicolors = true  -- use 24-bits colors
 
 --
 ---- search
