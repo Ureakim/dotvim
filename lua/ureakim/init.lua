@@ -7,7 +7,6 @@ if vim.g.neovide then
     require("ureakim.neovide")
 end
 
-vim.opt.filetype = "on"                               -- activate filetype detection
 vim.opt.filetype.plugin = "on"                        -- activate filetype plugins
 vim.opt.filetype.indent = "on"                        -- activate filetype identation
 
