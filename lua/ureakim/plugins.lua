@@ -17,6 +17,7 @@ require("lazy").setup({
         lazy = false,
         priority = 1000
     },
+    { "nvim-lua/plenary.nvim" },
     {
         "nvim-treesitter/nvim-treesitter",
         init = TSUpdate
@@ -35,6 +36,9 @@ require("lazy").setup({
         "rcarriga/nvim-dap-ui",
         dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" }
     },
+
+    { "zbirenbaum/copilot.lua" },
+    { "CopilotC-Nvim/CopilotChat.nvim",   branch = "canary" },
 
     { "nvim-lualine/lualine.nvim" },
 
