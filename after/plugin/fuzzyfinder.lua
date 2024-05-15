@@ -7,4 +7,5 @@ vim.keymap.set('n', '<leader>li', fzf.lsp_implementations, { desc = "List symbol
 vim.keymap.set('n', '<leader>la', fzf.lsp_code_actions, { desc = "List code actions" })
 vim.keymap.set('n', '<leader>ls', fzf.lsp_document_symbols, { desc = "List buffer symbols" })
 vim.keymap.set('n', '<leader>fF', fzf.grep, { desc = "Find text in directory" })
+vim.keymap.set('n', '<leader>ft', '<cmd>lua require("fzf-lua").grep({search="TODO|TOFIX", no_esc=true})<CR>', { desc = "Find TODO comments" })
 
