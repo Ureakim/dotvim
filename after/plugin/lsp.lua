@@ -30,6 +30,7 @@ local on_attach = function(client, bufnr)
         { noremap = true, silent = true, buffer = bufnr, desc = "Format buffer" })
     vim.keymap.set('n', '<leader>lR', vim.lsp.buf.rename,
         { noremap = true, silent = true, buffer = bufnr, desc = "Rename symbol" })
+    vim.keymap.set('n', '<leader>la', vim.lsp.buf.code_action, { desc = "List code actions" })
 end
 
 local lsp_flags = {
@@ -118,4 +119,4 @@ require('lspconfig')['gopls'].setup {
 }
 
 -- Zig
-require'lspconfig'.zls.setup{}
+require 'lspconfig'.zls.setup {}
