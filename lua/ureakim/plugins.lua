@@ -47,6 +47,7 @@ require("lazy").setup({
     { "williamboman/mason.nvim" },
     { "williamboman/mason-lspconfig.nvim" },
     { "nvim-telescope/telescope.nvim",    branch = "0.1.x" },
+    { "nvim-telescope/telescope-ui-select.nvim" },
 
     {
         "folke/noice.nvim",

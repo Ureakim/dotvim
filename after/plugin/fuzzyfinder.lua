@@ -8,8 +8,14 @@ require("telescope").setup {
             hidden = true,
             find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*" }
         }
+    },
+    extensions = {
+    ["ui-select"] = {
+      require("telescope.themes").get_dropdown {}
     }
+  }
 }
+require("telescope").load_extension("ui-select")
 
 local builtin = require("telescope.builtin")
 vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = "Find file" })
