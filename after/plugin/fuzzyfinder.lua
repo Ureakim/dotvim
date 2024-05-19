@@ -3,6 +3,10 @@ require("telescope").setup {
         buffers = {
             sort_lastused = true,
             ignore_current_buffer = true
+        },
+        find_files = {
+            hidden = true,
+            find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*" }
         }
     }
 }
