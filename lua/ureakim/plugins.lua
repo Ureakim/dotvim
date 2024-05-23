@@ -52,7 +52,7 @@ require("lazy").setup({
     {
         "folke/noice.nvim",
         event = "VeryLazy",
-        dependencies = { "MunifTanjim/nui.nvim", "rcarriga/nvim-notify", }
+        dependencies = { "MunifTanjim/nui.nvim" }
     },
     {
         "folke/which-key.nvim",
