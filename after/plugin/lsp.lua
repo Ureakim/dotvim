@@ -118,5 +118,13 @@ require('lspconfig')['gopls'].setup {
     flags = lsp_flags,
 }
 
+require('lspconfig')['templ'].setup {
+    on_attach = on_attach,
+    flags = lsp_flags,
+}
+
 -- Zig
-require 'lspconfig'.zls.setup {}
+require 'lspconfig'.zls.setup {
+    on_attach = on_attach,
+    flags = lsp_flags,
+}
