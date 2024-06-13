@@ -37,8 +37,8 @@ require("lazy").setup({
         dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" }
     },
 
-    { "zbirenbaum/copilot.lua" },
-    { "CopilotC-Nvim/CopilotChat.nvim",   branch = "canary" },
+    { "zbirenbaum/copilot.lua", enabled = false },
+    { "CopilotC-Nvim/CopilotChat.nvim",   branch = "canary", enabled = false },
 
     { "nvim-lualine/lualine.nvim" },
 
