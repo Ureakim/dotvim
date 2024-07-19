@@ -1,9 +1,9 @@
 local wk = require("which-key")
-wk.register({
-    d = { name = "Debugger" },
-    f = { name = "Find" },
-    g = { name = "Diagnostics" },
-    j = { name = "AI" },
-    l = { name = "LSP" },
-    p = { name = "Project" },
-}, { prefix = "<leader>" })
+wk.add({
+    {"<leader>d", group = "Debugger"},
+    {"<leader>f", group = "Find"},
+    {"<leader>g", group = "Diagnostics"},
+    {"<leader>j", group = "AI"},
+    {"<leader>l", group = "LSP"},
+    {"<leader>p", group = "Project"},
+})
