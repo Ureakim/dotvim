@@ -128,3 +128,9 @@ require 'lspconfig'.zls.setup {
     on_attach = on_attach,
     flags = lsp_flags,
 }
+
+-- Godot
+require 'lspconfig'.gdscript.setup {
+    on_attach = on_attach,
+    flags = lsp_flags,
+}
