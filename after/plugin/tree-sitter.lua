@@ -38,7 +38,8 @@ require 'nvim-treesitter.configs'.setup {
         -- Needed because treesitter highlight turns off autoindent for php files
         enable = true,
         disable = {
-            "gdscript"
+            "gdscript",
+            "html"
         }
     }
 }

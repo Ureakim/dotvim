@@ -41,6 +41,19 @@ local lsp_flags = {
 --
 -- lsp servers
 --
+--
+
+-- CSS
+require('lspconfig')['cssls'].setup {
+    on_attach = on_attach,
+    flags = lsp_flags,
+}
+
+-- HTML
+require('lspconfig')['html'].setup {
+    on_attach = on_attach,
+    flags = lsp_flags,
+}
 
 -- Rust
 require('lspconfig')['rust_analyzer'].setup {

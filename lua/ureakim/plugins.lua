@@ -36,6 +36,7 @@ require("lazy").setup({
         "rcarriga/nvim-dap-ui",
         dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" }
     },
+    { "aserowy/tmux.nvim" },
 
     { "zbirenbaum/copilot.lua", enabled = false },
     { "CopilotC-Nvim/CopilotChat.nvim",   branch = "canary", enabled = false },
