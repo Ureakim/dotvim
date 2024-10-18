@@ -39,7 +39,8 @@ require 'nvim-treesitter.configs'.setup {
         enable = true,
         disable = {
             "gdscript",
-            "html"
+            "html",
+            "go"
         }
     }
 }
