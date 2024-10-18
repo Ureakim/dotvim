@@ -147,3 +147,9 @@ require 'lspconfig'.gdscript.setup {
     on_attach = on_attach,
     flags = lsp_flags,
 }
+
+-- Js/Ts
+require 'lspconfig'.ts_ls.setup {
+    on_attach = on_attach,
+    flags = lsp_flags,
+}
