@@ -30,10 +30,6 @@ require("lazy").setup({
     { "nvim-telescope/telescope.nvim",          branch = "0.1.x" },
     { "nvim-telescope/telescope-ui-select.nvim" },
     {
-        "stevearc/oil.nvim",
-        dependencies = { "nvim-tree/nvim-web-devicons" }
-    },
-    {
         "folke/which-key.nvim",
         event = "VeryLazy",
         init = function()

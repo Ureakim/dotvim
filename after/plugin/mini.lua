@@ -2,6 +2,7 @@ require('mini.icons').setup()
 require('mini.notify').setup()
 require('mini.pairs').setup()
 require('mini.comment').setup()
+require('mini.files').setup()
 local animate = require('mini.animate')
 animate.setup({
     cursor = {
@@ -38,3 +39,5 @@ require('mini.completion').setup({
         force_twostep = '<C-l>',
     },
 })
+
+vim.keymap.set('n', '<leader>fe', '<CMD>:lua MiniFiles.open()<CR>', { desc = "Open file explorer" })
