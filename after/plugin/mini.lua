@@ -2,6 +2,24 @@ require('mini.icons').setup()
 require('mini.notify').setup()
 require('mini.pairs').setup()
 require('mini.comment').setup()
+local animate = require('mini.animate')
+animate.setup({
+    cursor = {
+        timing = animate.gen_timing.linear({ duration = 100, unit = 'total' }),
+    },
+    scroll = {
+        enable = false,
+    },
+    resize = {
+        timing = animate.gen_timing.linear({ duration = 100, unit = 'total' }),
+    },
+    open = {
+        timing = animate.gen_timing.linear({ duration = 300, unit = 'total' }),
+    },
+    close = {
+        timing = animate.gen_timing.linear({ duration = 300, unit = 'total' }),
+    }
+})
 require('mini.hipatterns').setup({
     highlighters = {
         -- Highlight standalone 'FIXME', 'HACK', 'TODO', 'NOTE'
