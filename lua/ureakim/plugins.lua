@@ -27,8 +27,6 @@ require("lazy").setup({
     },
     { "nvim-lualine/lualine.nvim" },
     { "aserowy/tmux.nvim" },
-    { "nvim-telescope/telescope.nvim",          branch = "0.1.x" },
-    { "nvim-telescope/telescope-ui-select.nvim" },
     {
         "folke/which-key.nvim",
         event = "VeryLazy",
