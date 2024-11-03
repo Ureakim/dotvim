@@ -13,7 +13,6 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
     -- Requirements
-    { "nvim-lua/plenary.nvim" },
     { "nvim-treesitter/nvim-treesitter",  build = ":TSUpdate" },
     { "williamboman/mason.nvim" },
     { "williamboman/mason-lspconfig.nvim" },
@@ -40,9 +39,15 @@ require("lazy").setup({
     { "neovim/nvim-lspconfig" },
     { "dcampos/nvim-snippy" },
 
+    -- IA
+    { "zbirenbaum/copilot.lua" },
+    {
+        "CopilotC-Nvim/CopilotChat.nvim",
+        branch = "canary",
+        dependencies = { "nvim-lua/plenary.nvim" }
+    },
+
     -- debug
     { "mfussenegger/nvim-dap" },
-    { "rcarriga/nvim-dap-ui",           dependencies = { "nvim-neotest/nvim-nio" } },
-    { "zbirenbaum/copilot.lua",         enabled = false },
-    { "CopilotC-Nvim/CopilotChat.nvim", branch = "canary",                         enabled = false },
+    { "rcarriga/nvim-dap-ui", dependencies = { "nvim-neotest/nvim-nio" } },
 })

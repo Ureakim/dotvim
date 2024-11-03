@@ -15,6 +15,6 @@ Keybindings are organized via "namespace": \<leader\> and a letter
 - \<leader\>d: Debugger
 - \<leader\>f: Find things (files, buffers, help tags, ...)
 - \<leader\>g and ]g/[g: Diagnostics navigation
-- \<leader\>j: AI
+- \<leader\>b/\<C-b\>: AI
 - \<leader\>l: LSP functions (definition, code actions, renaming, ...)
 - \<leader\>p: Project specific commands (launch unit tests, build, ...)
