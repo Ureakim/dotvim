@@ -3,6 +3,7 @@ require('mini.extra').setup()
 require('mini.notify').setup()
 require('mini.pairs').setup()
 require('mini.comment').setup()
+require('mini.ai').setup()
 require('mini.files').setup()
 local animate = require('mini.animate')
 animate.setup({
