@@ -12,49 +12,20 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+    -- Requirements
+    { "nvim-treesitter/nvim-treesitter",  build = ":TSUpdate" },
+    { "williamboman/mason.nvim" },
+    { "williamboman/mason-lspconfig.nvim" },
+    { "echasnovski/mini.nvim",            version = false },
+
+    -- Theme & UI
     {
         "Ureakim/nebulae.nvim",
         lazy = false,
         priority = 1000
     },
-    { "nvim-lua/plenary.nvim" },
-    {
-        "nvim-treesitter/nvim-treesitter",
-        init = TSUpdate
-    },
-    { "neovim/nvim-lspconfig" },
-    {
-        "windwp/nvim-autopairs",
-        event = "InsertEnter"
-    },
-    { "mfussenegger/nvim-dap" },
-    {
-        "stevearc/oil.nvim",
-        dependencies = { "nvim-tree/nvim-web-devicons" }
-    },
-    {
-        "rcarriga/nvim-dap-ui",
-        dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" }
-    },
-    { "aserowy/tmux.nvim" },
-
-    { "zbirenbaum/copilot.lua", enabled = false },
-    { "CopilotC-Nvim/CopilotChat.nvim",   branch = "canary", enabled = false },
-
     { "nvim-lualine/lualine.nvim" },
-
-    { "dcampos/nvim-snippy" },
-
-    { "williamboman/mason.nvim" },
-    { "williamboman/mason-lspconfig.nvim" },
-    { "nvim-telescope/telescope.nvim",    branch = "0.1.x" },
-    { "nvim-telescope/telescope-ui-select.nvim" },
-
-    {
-        "folke/noice.nvim",
-        event = "VeryLazy",
-        dependencies = { "MunifTanjim/nui.nvim" }
-    },
+    { "aserowy/tmux.nvim" },
     {
         "folke/which-key.nvim",
         event = "VeryLazy",
@@ -62,5 +33,21 @@ require("lazy").setup({
             vim.o.timeout = true
             vim.o.timeoutlen = 300
         end
-    }
+    },
+
+    -- Autocomplete
+    { "neovim/nvim-lspconfig" },
+    { "dcampos/nvim-snippy" },
+
+    -- IA
+    { "zbirenbaum/copilot.lua" },
+    {
+        "CopilotC-Nvim/CopilotChat.nvim",
+        branch = "canary",
+        dependencies = { "nvim-lua/plenary.nvim" }
+    },
+
+    -- debug
+    { "mfussenegger/nvim-dap" },
+    { "rcarriga/nvim-dap-ui", dependencies = { "nvim-neotest/nvim-nio" } },
 })
