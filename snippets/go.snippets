@@ -1,4 +1,4 @@
-snippet testable "test table"
+snippet go:testable "test table"
 	func Test$1(t *testing.T) {
 		cases := []struct {
 			name string
@@ -14,7 +14,12 @@ snippet testable "test table"
 		}
 	}
 
-snippet test "unit test"
+snippet go:test "unit test"
 	func Test$1(t *testing.T) {
 		$0
+	}
+
+snippet go:deepeq
+	if !reflect.DeepEqual(got, tt.expected) {
+		t.Fatalf("%s\n  expected: %v\n  got     : %v", tt.name, tt.expected, got)
 	}

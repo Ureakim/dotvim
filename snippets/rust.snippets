@@ -1,4 +1,4 @@
-snippet tests "test module"
+snippet rust:tests "test module"
 	#[cfg(test)]
 	mod tests {
 		use super::*;
@@ -9,7 +9,7 @@ snippet tests "test module"
 		}
 	}
 
-snippet test "unit test"
+snippet rust:test "unit test"
 	#[test]
 	fn test_$1() {
 		$0
