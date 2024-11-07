@@ -16,7 +16,14 @@ require("lazy").setup({
     { "nvim-treesitter/nvim-treesitter",  build = ":TSUpdate" },
     { "williamboman/mason.nvim" },
     { "williamboman/mason-lspconfig.nvim" },
+
+    -- Functionality
     { "echasnovski/mini.nvim",            version = false },
+    {
+        "nvim-neorg/neorg",
+        lazy = false,
+        version = "*",
+    },
 
     -- Theme & UI
     {
