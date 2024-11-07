@@ -27,7 +27,14 @@ local on_attach = function(_, bufnr)
         { noremap = true, silent = true, buffer = bufnr, desc = "Format buffer" })
     vim.keymap.set('n', '<leader>lR', vim.lsp.buf.rename,
         { noremap = true, silent = true, buffer = bufnr, desc = "Rename symbol" })
-    vim.keymap.set('n', '<leader>la', vim.lsp.buf.code_action, { desc = "List code actions" })
+    vim.keymap.set('n', '<leader>la', vim.lsp.buf.code_action,
+        { noremap = true, silent = true, buffer = bufnr, desc = "List code actions" })
+    vim.keymap.set('n', '<leader>ls', '<CMD>:Pick lsp scope="document_symbol"<CR>',
+        { noremap = true, silent = true, buffer = bufnr, desc = "Show LSP symbols" })
+    vim.keymap.set('n', '<leader>li', '<CMD>:Pick lsp scope="implementation"<CR>',
+        { noremap = true, silent = true, buffer = bufnr, desc = "Show LSP implementations" })
+    vim.keymap.set('n', '<leader>lr', '<CMD>:Pick lsp scope="references"<CR>',
+        { noremap = true, silent = true, buffer = bufnr, desc = "Show LSP references" })
 end
 
 local lsp_flags = {

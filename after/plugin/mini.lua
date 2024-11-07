@@ -41,15 +41,10 @@ require('mini.completion').setup({
         force_twostep = '<C-l>',
     },
 })
-require('mini.pick').setup({
-
-})
+require('mini.pick').setup({})
 
 -- Keymaps
 vim.keymap.set('n', '<leader>fe', '<CMD>:lua MiniFiles.open()<CR>', { desc = "Open file explorer" })
 vim.keymap.set('n', '<leader>ff', '<CMD>:Pick files<CR>', { desc = "Open file finder" })
 vim.keymap.set('n', '<leader>fb', '<CMD>:Pick buffers<CR>', { desc = "Open buffer finder" })
 vim.keymap.set('n', '<leader>fF', '<CMD>:Pick grep_live<CR>', { desc = "Open buffer finder" })
-vim.keymap.set('n', '<leader>ls', '<CMD>:Pick lsp scope="document_symbol"<CR>', { desc = "Show LSP symbols" })
-vim.keymap.set('n', '<leader>li', '<CMD>:Pick lsp scope="implementation"<CR>', { desc = "Show LSP implementations" })
-vim.keymap.set('n', '<leader>lr', '<CMD>:Pick lsp scope="references"<CR>', { desc = "Show LSP references" })
