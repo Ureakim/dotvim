@@ -1,26 +1,26 @@
 -- require order is important
 -- ex: lazy.nvim plugin need to have the mapleader already defined
 require("ureakim.remaps")
-require("ureakim.autocmd")
+require("ureakim.commands")
 require("ureakim.plugins")
 if vim.g.neovide then
     require("ureakim.neovide")
 end
 
-vim.opt.filetype.plugin = "on"                                 -- activate filetype plugins
-vim.opt.filetype.indent = "on"                                 -- activate filetype identation
+vim.opt.filetype.plugin = "on"                         -- activate filetype plugins
+vim.opt.filetype.indent = "on"                         -- activate filetype identation
 
-vim.opt.autoread = true                                        -- autoreload file after external changes
+vim.opt.autoread = true                                -- autoreload file after external changes
 
-vim.opt.backspace = { "indent", "eol", "start" }               -- more powerful backspacing
+vim.opt.backspace = { "indent", "eol", "start" }       -- more powerful backspacing
 
 vim.opt.completeopt = "menu,menuone,noinsert,noselect" -- configure autocomplete popup
 
-vim.opt.hidden = true                                          -- hide unsaved buffer
+vim.opt.hidden = true                                  -- hide unsaved buffer
 
-vim.wo.wrap = false                                            -- no wrapping by default
+vim.wo.wrap = false                                    -- no wrapping by default
 
-vim.opt.clipboard:append({ 'unnamedplus' })                    -- use system clipboard
+vim.opt.clipboard:append({ 'unnamedplus' })            -- use system clipboard
 
 -- vim.opt.timeout = true        -- activate mappings timeout
 -- vim.opt.ttimeout = true       -- activate keycodes timeout
