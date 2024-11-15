@@ -31,7 +31,6 @@ require("lazy").setup({
         lazy = false,
         priority = 1000
     },
-    { "nvim-lualine/lualine.nvim" },
     { "aserowy/tmux.nvim" },
     {
         "folke/which-key.nvim",
