@@ -1,0 +1,50 @@
+---
+- name: Neovim
+  hosts: 127.0.0.1
+  connection: local
+
+  tasks:
+    - name: Ensure neovim dependencies are at the latest version
+      dnf:
+        name:
+          - ninja-build
+          - cmake
+          - gcc
+          - make
+          - unzip
+          - gettext
+          - curl
+          - glibc-gconv-extra
+        state: latest
+      become: yes
+
+    - name: Pull latest changes
+      git:
+        repo: https://github.com/neovim/neovim.git
+        dest: nvim-src
+        version: stable
+
+    - name: Build Neovim
+      make:
+        chdir: nvim-src
+        params:
+          CMAKE_BUILD_TYPE: RelWithDebInfo
+
+    - name: Delete old bin
+      shell: rm /usr/local/bin/nvim
+      args:
+        removes: /usr/local/bin/nvim
+      become: yes
+
+    - name: Delete old deps
+      shell: rm -rf /usr/local/share/nvim/
+      args:
+        removes: /usr/local/share/nvim/
+      become: yes
+
+    - name: Install Neovim
+      make:
+        chdir: nvim-src
+        target: install
+      become: yes
+
