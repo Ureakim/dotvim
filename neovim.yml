@@ -15,6 +15,10 @@
           - gettext
           - curl
           - glibc-gconv-extra
+          - git
+          - tree-sitter-cli
+          - ripgrep
+          - nodejs
         state: latest
       become: yes
 
