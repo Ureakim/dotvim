@@ -45,14 +45,6 @@ require("lazy").setup({
     { "neovim/nvim-lspconfig" },
     { "dcampos/nvim-snippy" },
 
-    -- IA
-    { "zbirenbaum/copilot.lua" },
-    {
-        "CopilotC-Nvim/CopilotChat.nvim",
-        branch = "main",
-        dependencies = { "nvim-lua/plenary.nvim" }
-    },
-
     -- debug
     { "mfussenegger/nvim-dap" },
     { "rcarriga/nvim-dap-ui", dependencies = { "nvim-neotest/nvim-nio" } },
