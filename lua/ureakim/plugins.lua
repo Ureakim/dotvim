@@ -44,6 +44,7 @@ require("lazy").setup({
     -- Autocomplete
     { "neovim/nvim-lspconfig" },
     { "dcampos/nvim-snippy" },
+    { "milanglacier/minuet-ai.nvim", dependencies = { "nvim-lua/plenary.nvim" } },
 
     -- debug
     { "mfussenegger/nvim-dap" },
