@@ -17,6 +17,8 @@ vim.opt.backspace = { "indent", "eol", "start" }       -- more powerful backspac
 vim.opt.completeopt = "menu,menuone,noinsert,noselect" -- configure autocomplete popup
 
 vim.opt.hidden = true                                  -- hide unsaved buffer
+vim.o.backup = false                                   -- disable the creation of backup files
+vim.o.writebackup = false                              -- disable the creation of a backup before writing to a file
 
 vim.wo.wrap = false                                    -- no wrapping by default
 
