@@ -5,11 +5,11 @@ local dapui = require("dapui")
 -- Keymaps
 --
 
-vim.keymap.set('n', '<leader>dd', dap.continue, { desc = "Launch or continue" })
-vim.keymap.set('n', '<leader>dc', dap.terminate, { desc = "Terminate" })
-vim.keymap.set('n', '<leader>db', dap.toggle_breakpoint, { desc = "Toggle breakpoint" })
-vim.keymap.set('n', '<leader>di', dap.step_into, { desc = "Step in" })
-vim.keymap.set('n', '<leader>do', dap.step_over, { desc = "Step out" })
+vim.keymap.set('n', '<leader>dd', function() dap.continue() end, { desc = "Launch or continue" })
+vim.keymap.set('n', '<leader>dc', function() dap.terminate() end, { desc = "Terminate" })
+vim.keymap.set('n', '<leader>db', function() dap.toggle_breakpoint() end, { desc = "Toggle breakpoint" })
+vim.keymap.set('n', '<leader>di', function() dap.step_into() end, { desc = "Step in" })
+vim.keymap.set('n', '<leader>do', function() dap.step_over() end, { desc = "Step out" })
 
 --
 -- DAP Config
@@ -181,7 +181,7 @@ dap.adapters["local-lua"] = {
     enrich_config = function(config, on_config)
         if not config["extensionPath"] then
             local c = vim.deepcopy(config)
-            -- 💀 If this is missing or wrong you'll see
+            -- If this is missing or wrong you'll see
             -- "module 'lldebugger' not found" errors in the dap-repl when trying to launch a debug session
             c.extensionPath = vim.fn.stdpath('data') .. '/mason/packages/local-lua-debugger-vscode/extension'
             on_config(c)
@@ -198,7 +198,7 @@ dap.configurations.lua = {
         request = 'launch',
         cwd = '${workspaceFolder}',
         program = {
-            lua = 'lua5.4',
+            lua = 'luajit',
             file = '${file}',
         },
         args = {},
