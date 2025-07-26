@@ -28,6 +28,7 @@ require("lazy").setup({
     -- Theme & UI
     {
         "Ureakim/nebulae.nvim",
+        branch = "green",
         lazy = false,
         priority = 1000
     },
