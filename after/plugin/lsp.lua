@@ -5,8 +5,8 @@ vim.diagnostic.config({
 
 -- LSP Mappings
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
-vim.keymap.set('n', '[g', vim.diagnostic.goto_prev, { noremap = true, silent = true, desc = "Prev error" })
-vim.keymap.set('n', ']g', vim.diagnostic.goto_next, { noremap = true, silent = true, desc = "Next error" })
+vim.keymap.set('n', '[g', function() vim.diagnostic.jump({count=1, float=true}) end, { noremap = true, silent = true, desc = "Prev error" })
+vim.keymap.set('n', ']g', function() vim.diagnostic.jump({count=1, float=true}) end, { noremap = true, silent = true, desc = "Next error" })
 vim.keymap.set('n', '<leader>gg', vim.diagnostic.open_float, { noremap = true, silent = true, desc = "View diagnostics" })
 vim.keymap.set('n', '<leader>gl', vim.diagnostic.setloclist,
     { noremap = true, silent = true, desc = "View diagnostics in loclist" })
@@ -42,59 +42,28 @@ local lsp_flags = {
     debounce_text_changes = 150,
 }
 
+local function createLspConfig(name, config)
+    if config == nil then
+        config = {}
+    end
+
+    config["on_attach"] = on_attach
+    config["flags"] = lsp_flags
+    vim.lsp.config(name, config)
+    vim.lsp.enable(name)
+end
+
 --
 -- lsp servers
 --
---
 
--- CSS
-require('lspconfig')['cssls'].setup {
-    on_attach = on_attach,
-    flags = lsp_flags,
-}
-
--- HTML
-require('lspconfig')['html'].setup {
-    on_attach = on_attach,
-    flags = lsp_flags,
-}
-
--- Rust
-require('lspconfig')['rust_analyzer'].setup {
-    on_attach = on_attach,
-    flags = lsp_flags,
-    ['rust-analyzer'] = {
-        diagnostics = {
-            enable = false,
-        }
-    }
-}
-
--- LUA
-require('lspconfig')['lua_ls'].setup {
-    on_attach = on_attach,
-    flags = lsp_flags,
-    settings = {
-        Lua = {
-            -- Version of Lua used
-            runtime = { version = 'LuaJIT' },
-            -- Get the language server to recognize the `vim` global
-            diagnostics = { globals = { 'vim' } },
-            -- Make the server aware of Neovim runtime files
-            workspace = {
-                library = {
-                    [vim.fn.expand('$VIMRUNTIME/lua')] = true,
-                    [vim.fn.stdpath('config') .. '/lua'] = true,
-                },
-            },
-            -- Do not send telemetry data containing a randomized but unique identifier
-            telemetry = { enable = false },
-        },
-    }
-}
-
--- Python
-require('lspconfig')['pylsp'].setup {
+createLspConfig('html')
+createLspConfig('cssls')
+createLspConfig('gopls')
+createLspConfig('templ')
+createLspConfig('ts_ls')
+createLspConfig('csharp_ls')
+createLspConfig('pylsp', {
     settings = {
         pylsp = {
             plugins = {
@@ -105,35 +74,53 @@ require('lspconfig')['pylsp'].setup {
             }
         }
     },
-    on_attach = on_attach,
-    flags = lsp_flags,
-}
+})
+createLspConfig('lua_ls', {
+    on_init = function(client)
+        if client.workspace_folders then
+            local path = client.workspace_folders[1].name
+            if
+                path ~= vim.fn.stdpath('config')
+                and (vim.uv.fs_stat(path .. '/.luarc.json') or vim.uv.fs_stat(path .. '/.luarc.jsonc'))
+            then
+                return
+            end
+        end
 
--- C/C++
-require('lspconfig')['clangd'].setup {
-    on_attach = on_attach,
-    flags = lsp_flags,
-}
+        client.config.settings.Lua = vim.tbl_deep_extend('force', client.config.settings.Lua, {
+            runtime = {
+                -- Tell the language server which version of Lua you're using (most
+                -- likely LuaJIT in the case of Neovim)
+                version = 'LuaJIT',
+                -- Tell the language server how to find Lua modules same way as Neovim
+                -- (see `:h lua-module-load`)
+                path = {
+                    'lua/?.lua',
+                    'lua/?/init.lua',
+                },
+            },
+            -- Make the server aware of Neovim runtime files
+            workspace = {
+                checkThirdParty = false,
+                library = {
+                    vim.env.VIMRUNTIME
+                    -- Depending on the usage, you might want to add additional paths
+                    -- here.
+                    -- '${3rd}/luv/library'
+                    -- '${3rd}/busted/library'
+                }
+                -- Or pull in all of 'runtimepath'.
+                -- NOTE: this is a lot slower and will cause issues when working on
+                -- your own configuration.
+                -- See https://github.com/neovim/nvim-lspconfig/issues/3189
+                -- library = {
+                --   vim.api.nvim_get_runtime_file('', true),
+                -- }
+            }
+        })
+    end,
+    settings = {
+        Lua = {}
+    }
+})
 
--- Golang
-require('lspconfig')['gopls'].setup {
-    on_attach = on_attach,
-    flags = lsp_flags,
-}
-
-require('lspconfig')['templ'].setup {
-    on_attach = on_attach,
-    flags = lsp_flags,
-}
-
--- Godot
-require 'lspconfig'.gdscript.setup {
-    on_attach = on_attach,
-    flags = lsp_flags,
-}
-
--- Js/Ts
-require 'lspconfig'.ts_ls.setup {
-    on_attach = on_attach,
-    flags = lsp_flags,
-}
