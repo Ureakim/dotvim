@@ -13,7 +13,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
     -- Requirements
-    { "nvim-treesitter/nvim-treesitter",  build = ":TSUpdate" },
+    { "nvim-treesitter/nvim-treesitter", branch = "main",  build = ":TSUpdate" },
     { "williamboman/mason.nvim" },
     { "williamboman/mason-lspconfig.nvim" },
 
